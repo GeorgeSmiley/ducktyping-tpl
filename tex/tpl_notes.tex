@@ -1,0 +1,66 @@
+\title{Advanced Topics in Programming Language - Julia }
+\author{
+        Tommaso Puccetti \\
+                Studente presso Universita degli studi di Firenze
+}
+\date{\today}
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{jlcode}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\listoftables
+\listoffigures
+
+	
+\section{Type checking: recall }
+	
+		\textbf{Type checking} is the process of verifying and enforces the typing rules of a language. In other words the \textbf{type checker} (the type checking algorithm of the language ) is used to prove the \textbf{type safety} of a program.\\
+		It may occur either at:
+		
+		\begin{enumerate}
+			\item compile time (\textbf{Static});
+			\item run time (\textbf{Dynamic}). 
+		\end{enumerate}
+	
+		Let's see in details what's the difference:	
+		
+		\begin{itemize}
+			\item \textbf{Static type checking: }is the process of verifying the type safety of a program based on the analysis of a program text.  If a program passes a static type checker, then the program is guaranteed to satisfy some set of type safety properties for all possible inputs.
+			\item \textbf{Dynamic type checking:} is the process of verifying the type safety of a program at runtime. It may cause a program to fail at runtime.
+		\end{itemize}
+	
+		There are also two different ways to classify the type check:
+		
+		\begin{itemize}
+			\item \textbf{Explicitly typed:} each variables is annotaded in source code with type's information. In this case the \textit{type check is simple but the language is more difficult} (from the programmers point of view).
+			\item \textbf{Implicitly typed:} the data types of source code are automatically detected. It is also rederred as \textbf{type inference}. The language \textit{is easier but the type check algorithm is far more complex}.
+		\end{itemize}
+	
+		\subsection{Example: type inference vs. dynamic typing}
+			These two kind of typings could be confused. Here an example to clarify the differences:
+
+			\begin{lstlisting}
+				var1 = 10
+				var2 = "astring"
+				var3 = var1 + var2
+			\end{lstlisting}
+			
+			\begin{enumerate}
+				\item In \textbf{dynamically typed} language this code run without errors: at runtime the \textit{var1} is forced to be a string and the result is \textit{"10astring"};
+				\item By the other side, in \textbf{inferred type language} the compiler \textit{throw an error}.
+			\end{enumerate}
+		
+
+
+
+
+
+
+
+		
+\end{document}
