@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.10)  15 APR 2019 19:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.10)  16 APR 2019 21:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -429,37 +429,81 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 75.
- [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 75.
- (./tpl_notes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 75.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 75.
+<img/classification.png, id=91, 1606.0pt x 784.9325pt>
+File: img/classification.png Graphic file (type png)
+<use img/classification.png>
+Package pdftex.def Info: img/classification.png  used on input line 51.
+(pdftex.def)             Requested size: 321.19432pt x 156.98372pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--59
+
+ []
+
+[3 <./img/classification.png>]
+<img/static.png, id=100, 193.72375pt x 226.8475pt>
+File: img/static.png Graphic file (type png)
+<use img/static.png>
+Package pdftex.def Info: img/static.png  used on input line 62.
+(pdftex.def)             Requested size: 116.23514pt x 136.10954pt.
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <8> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 68.
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--82
+
+ []
+
+[4 <./img/static.png (PNG copy)>]
+<img/dynamic.png, id=113, 73.27374pt x 226.8475pt>
+File: img/dynamic.png Graphic file (type png)
+<use img/dynamic.png>
+Package pdftex.def Info: img/dynamic.png  used on input line 85.
+(pdftex.def)             Requested size: 43.96457pt x 136.10954pt.
+
+Overfull \hbox (0.59128pt too wide) in paragraph at lines 94--95
+[]\T1/cmr/m/n/12 CAPIRE SE SONO SOTTO CAT-E-GORIE DI STATIC O DIS-TINZIONE
+ []
+
+[5 <./img/dynamic.png (PNG copy)>]
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 131.
+ [6]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 131.
+
+(./tpl_notes.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 131.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 131.
 Package rerunfilecheck Info: File `tpl_notes.out' has not changed.
-(rerunfilecheck)             Checksum: 8A7F946F3288AC3126FF31C3ABF744BF;202.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 75.
+(rerunfilecheck)             Checksum: 8E61CBF6B4F02B4CAC5DDB46AD33152C;795.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 131.
  ) 
 Here is how much of TeX's memory you used:
- 8468 strings out of 492982
- 119345 string characters out of 6134895
- 231846 words of memory out of 5000000
- 11926 multiletter control sequences out of 15000+600000
- 17931 words of font info for 54 fonts, out of 8000000 for 9000
+ 8699 strings out of 492982
+ 122280 string characters out of 6134895
+ 232166 words of memory out of 5000000
+ 12126 multiletter control sequences out of 15000+600000
+ 18630 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,6n,42p,314b,1652s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,7n,42p,391b,1585s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
 fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/latxfont/lcircle1.pfb></usr/share/texmf/fonts/type1/publi
-c/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.
-pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texm
-f/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public
-/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm2074.p
-fb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf
-/fonts/type1/public/cm-super/sftt0800.pfb>
-Output written on tpl_notes.pdf (3 pages, 151522 bytes).
+c/cm-super/sfbi1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.
+pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texm
+f/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public
+/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.p
+fb></usr/share/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf
+/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/
+cm-super/sftt0800.pfb>
+Output written on tpl_notes.pdf (6 pages, 363248 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
- 82 compressed objects within 1 object stream
- 18 named destinations out of 1000 (max. 500000)
- 25 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 180 PDF objects out of 1000 (max. 8388607)
+ 156 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 112 words of extra memory for PDF output out of 10000 (max. 10000000)
 

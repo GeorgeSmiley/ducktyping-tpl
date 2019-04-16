@@ -1,3 +1,12 @@
 \BOOKMARK [1][-]{section.1}{Possible references}{}% 1
-\BOOKMARK [1][-]{section.2}{Type checking: recall }{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Example: type inference vs. dynamic typing}{section.2}% 3
+\BOOKMARK [1][-]{section.2}{Questions}{}% 2
+\BOOKMARK [1][-]{section.3}{Type checking: classification}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Static type checking}{section.3}% 4
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Example}{subsection.3.1}% 5
+\BOOKMARK [2][-]{subsection.3.2}{Dynamic type checking}{section.3}% 6
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Example}{subsection.3.2}% 7
+\BOOKMARK [2][-]{subsection.3.3}{Explicitly typed}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.4}{Implicitly typed \(inference\)}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.5}{Strongly typed}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.6}{Weakly typed}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.7}{Example: type inference vs. dynamic typing}{section.3}% 12
