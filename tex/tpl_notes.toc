@@ -14,3 +14,6 @@
 \contentsline {subsection}{\numberline {3.6}Weakly typed}{7}{subsection.3.6}
 \contentsline {subsection}{\numberline {3.7}Example: type inference vs. dynamic typing}{7}{subsection.3.7}
 \contentsline {section}{\numberline {4}Python type checking}{8}{section.4}
+\contentsline {subsection}{\numberline {4.1}Dynamic and strongly typed}{8}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Duck typing}{9}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Main idea}{9}{subsubsection.4.2.1}
