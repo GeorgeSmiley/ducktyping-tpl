@@ -9,3 +9,4 @@ print(10+"ten") #Once executed the type check raise a type error.
 
 
 
+

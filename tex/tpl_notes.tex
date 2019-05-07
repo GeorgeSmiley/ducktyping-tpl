@@ -166,6 +166,41 @@
 			TypeError: unsupported operand type(s) for +: 'int' and 'str'
 		\end{lstlisting}
 		
+		There are some operations (methods, we will see later introducing duck typing) used even in case of type incongruence. \\
+		The boolean equivalence is permitted in Python 2 and 3: 
+		
+		\begin{lstlisting}
+			print("10" == 10)
+			print("10" != 10)
+		\end{lstlisting}
+		
+		Returning:
+		
+		\begin{lstlisting}
+			False
+			True
+		\end{lstlisting}
+		
+		In Python 2 "\textit{grather than}" and \textit{"less than"} are permitted:
+		
+		\begin{lstlisting}
+			print("10">10)
+			print("10">=10)
+			print("10"<10)
+			print("10"<=10)
+		\end{lstlisting}
+		
+		Returning:
+		
+		\begin{lstlisting}
+			True
+			True
+			False
+			False
+		\end{lstlisting}
+		
+		Python 3 do not allowed to do "\textit{grather than}" and \textit{"less than"} controls.\\
+		
 		Another consequnce is that programmers are \textbf{free to bind the same names (variables) to different objects with a different type}. Then the following statements are perfectly legal:
 		
 		\begin{lstlisting}
@@ -180,11 +215,16 @@
 		One of the advantage of the \textbf{strongly typing} for the \textbf{dynamic} language is that \textit{you can trust what's going on:} if you do something wrong, your program will generate a type error telling you where you went wrong, and you don't have to memorize a lot of arcane type-conversion rules or try to debug a situation where your variables have been silently changed without your knowledge. 
 		
 	\subsection{Duck typing}
+	
+		\subsubsection{Object oriented NECESSARIO}
+		
 		\subsubsection{Main idea}
-			
+			INSERIRE CHE IL DUCK TYPING è PREROGATIVA DEL DYNAMIC TYPING (FONTE TROVATA E SLIDE 14)
 			\textit{ If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck.}\\
 			
 			\textbf{The idea is that it doesn't actually matter what type my data is - just whether or not i can do what i want with it.}
+			
+			INSERIRE DEFINIZIONE SLIDE 14 (MAGARI TROVARE LA FONTE ORIGINALE)
 			
 			\begin{lstlisting}
 				class Duck:
