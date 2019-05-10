@@ -216,7 +216,80 @@
 		
 	\subsection{Duck typing}
 	
-		\subsubsection{Object oriented NECESSARIO}
+		\subsubsection{Object oriented}
+		
+		The following code show how to declare a class, define a costructor for its parameters, define others methods and access to both.
+		
+		\begin{lstlisting}
+			class Duck():
+				#Constructor 
+				def __init__(self, name, colour):
+					self.name = name
+					self.colour = colour
+				
+				def quack(self):
+					return "Quaaack"
+				
+				def fly(self):
+					return "The duck is flying"
+			
+			#Instantiate a istance of the Duck() class
+			donald = Duck("Donald","white")
+			
+			#Access to fields and methods
+			
+			print(donald.name)
+			print(donald.colour)
+			
+			print(donald.quack())
+			print(donald.fly())
+			
+		\end{lstlisting}
+		
+		\begin{lstlisting}
+			Donald
+			white
+			Quaaack
+			The duck is flying
+		\end{lstlisting}
+		
+		The first argument of every class method, including init, is always a reference to the current instance of the class. By convention, this argument is always named \textit{self}. In the init method, self refers to the newly created object; in other class methods, it refers to the instance whose method was called. \\
+		The \textit{self} world is the equivalent of \textit{this} in \textbf{Java}. However Java do not requires to pass \textit{this} explicitly as a first parameter of a method, it could be used straight in the body of the method for its pourpouse.  	
+		However self is not a reserved keyword in Python it’s just a strong convention. We could rewrite the previous class as follows:
+		
+		\begin{lstlisting}
+			class Duck():
+				#Constructor 
+				def __init__(myself, name, colour):
+					myself.name = name
+					myself.colour = colour
+			
+				def quack(myself):
+					return "Quaaack"
+			
+				def fly(myself):
+					return "The duck is flying"
+		\end{lstlisting}
+		
+		In Python is not possible to define multiple constructor for a class, still is possible to define a default value if one is not passed.
+		
+		\begin{lstlisting}
+			class Parrot():
+				def __init__(self, name = "Perry"):
+				self.name = name
+			
+			bird1 = Parrot()
+			bird2 = Parrot("Jack")
+			
+			print(bird1.name)
+			print(bird2.name)
+		\end{lstlisting}
+		
+		\begin{lstlisting}
+			Perry
+			Jack
+		\end{lstlisting}
+		
 		
 		\subsubsection{Main idea}
 			
