@@ -5,6 +5,7 @@
 }
 \date{\today}
 \documentclass[12pt]{article}
+\usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{listings}
@@ -30,6 +31,10 @@
 		\href{https://wiki.python.org/moin/Why is Python a dynamic language and also a strongly typed language}{Why Python is dynamic and strongly typed}
 		\item
 		\href{https://android.jlelse.eu/magic-lies-here-statically-typed-vs-dynamically-typed-languages-d151c7f95e2b}{Maybe schematic overview on typechecking}
+		\item
+		\href{https://stackoverflow.com/questions/972/adding-a-method-to-an-existing-object-instance}{Bound methods vs Function}
+		\item
+		\href{https://stackoverflow.com/questions/41692473/does-python-type-hint-annotations-cause-some-run-time-effects}{Annotation power in Python}
 	\end{itemize}
 
 \section{Questions}
@@ -368,7 +373,64 @@
 				public void run() {
 					this.engine.turnOn();
 			\end{lstlisting}
+			
+		Another intresting feature in Python, due to the duck typing, is the chance to add methods to the classes. First of all is important to say that in Python there is ad difference beetween:
+		\begin{itemize}
+			\item \textbf{Function};
+			\item \textbf{Bound method}.
+		\end{itemize} 
+	
+		Bound methods have been "bound" to an instance, and that instance will be passed as the first argument whenever the method is called.
 		
+		\begin{lstlisting}
+			>>> def foo():
+			...     print "foo"
+			...
+			>>> class A:
+			...     def bar( self ):
+			...         print "bar"
+			...
+			>>> a = A()
+			>>> foo
+			<function foo at 0x00A98D70>
+			>>> a.bar
+			<bound method A.bar of <__main__.A instance at 0x00A9BC88>>
+			>>>
+		\end{lstlisting}
+		Callables that are attributes of a class (as opposed to an instance) are still unbound, though, so you can modify the class definition whenever you want.
+		
+	%	\begin{lstlisting}
+	%		class Duck:
+	%			pass
+	%		
+	%		def quack(myself, arg):
+	%			myself.val = arg
+	%			return myself.val
+			
+	%		donald = Duck()
+	%		Duck.quack = quack
+	%		print donald.quack("Quaaack!")
+	%	\end{lstlisting}
+		
+		Recalling the previous example of calling a method on a list of object we have the following behaviour:
+		
+		\begin{lstlisting}
+			donald = Duck()
+			charlie = Parrot()
+			john = Man("John")
+			jack = Man("Jack")
+			v = [donald, charlie, john, jack]
+			
+			def fly(self):
+				return "Takes a plane"
+			
+			Man.fly = fly
+			
+			for i in v:
+				print(i.fly())
+		\end{lstlisting}
+		
+		The fly method was added to all the instances of Man class so that, when the fly method is called on the list there, are no errors at runtime.
 		
 		
 		
