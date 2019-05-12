@@ -25,7 +25,12 @@ v = [donald, charlie, john, jack]
 def fly(self):
 	return "Takes a plane"
 
-Man.fly = fly
+#Man.fly = fly
+
+import types
+
+john.fly = types.MethodType(fly, john)
 
 for i in v:
 	print(i.fly())
+

@@ -8,8 +8,27 @@
 \usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{hyperref}
-\usepackage{listings}
+\usepackage[procnames]{listings}
 \usepackage{jlcode}
+\usepackage{color}
+\usepackage{fancyvrb}
+
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{0,0,113}
+\definecolor{red}{RGB}{160,0,0}
+\definecolor{green}{RGB}{0,150,0}
+
+\lstset{language=Python, 
+	backgroundcolor=\color{white},
+	basicstyle=\ttfamily\small, 
+	keywordstyle=\color{keywords},
+	commentstyle=\color{comments},
+	stringstyle=\color{green},
+	showstringspaces=false,
+	identifierstyle=\color{black},
+	procnamekeys={def,class},
+}
+	
 
 \begin{document}
 \maketitle
@@ -35,6 +54,7 @@
 		\href{https://stackoverflow.com/questions/972/adding-a-method-to-an-existing-object-instance}{Bound methods vs Function}
 		\item
 		\href{https://stackoverflow.com/questions/41692473/does-python-type-hint-annotations-cause-some-run-time-effects}{Annotation power in Python}
+		\href{https://stackoverflow.com/questions/972/adding-a-method-to-an-existing-object-instance}{Adding a method to a class}
 	\end{itemize}
 
 \section{Questions}
@@ -146,6 +166,7 @@
 				\item By the other side, in \textbf{inferred type language} the compiler \textit{throw an error}.
 			\end{enumerate}
 \newpage
+\section{Python introduction}
 \section{Python type checking}
 	\subsection{Dynamic and strongly typed}
 		Python is \textbf{dynamic}: objects have a type but it is determined at runtime. \\
@@ -217,8 +238,33 @@
 		
 		Python is also \textbf{strongly typed} as the interpreter keeps track of all variables types. In Python is not allowed to perform operations inappropriate to the type of the object: attempting to add numbers to strings will fail.
 		
-		One of the advantage of the \textbf{strongly typing} for the \textbf{dynamic} language is that \textit{you can trust what's going on:} if you do something wrong, your program will generate a type error telling you where you went wrong, and you don't have to memorize a lot of arcane type-conversion rules or try to debug a situation where your variables have been silently changed without your knowledge. 
+		One of the advantage of the \textbf{strongly typing} for the \textbf{dynamic} language is that \textit{you can trust what's going on:} if you do something wrong, your program will generate a type error telling you where you went wrong, and you don't have to memorize a lot of arcane type-conversion rules or try to debug a situation where your variables have been silently changed without your knowledge.
 		
+	\subsection{Annotations}
+		Annotations were introduced in Python 3.0 and are the main way to add type hints to the code. We can annotate both \textbf{function} and \textbf{variable}.
+		
+		\begin{lstlisting}
+			import math
+			
+			pi: float = 3.142
+			
+			def circumference(radius: float) -> float:
+				return 2 * math.pi * radius
+		\end{lstlisting}
+		
+		Type hints and annotations do provide attributes that can be passed by 3rd party tools but du not add a real static typechecking in native Python so this should not effect the code performance significantly in the same way that comments don't.\\
+		From PEP 484:\\
+		\textit{ <...>Using type hints for performance optimizations is left as an exercise for the reader}.
+		
+		\begin{itemize}
+			\item Type hints help document your code;
+			\item Type hints improve IDEs and linters. They make it much easier to statically reason about your code. This in turn allows IDEs to offer better code completion and similar features. With the type annotation, PyCharm knows that text is a string, and can give specific suggestions based on this;
+			\item Type hints take developer time and effort to add. Even though it probably pays off in spending less time debugging, you will spend more time entering code.
+			\item Type hints introduce a slight penalty in start-up time. If you need to use the typing module the import time may be significant, especially in short scripts.	
+		\end{itemize}
+		
+		
+				
 	\subsection{Duck typing}
 	
 		\subsubsection{Object oriented}
@@ -430,7 +476,52 @@
 				print(i.fly())
 		\end{lstlisting}
 		
-		The fly method was added to all the instances of Man class so that, when the fly method is called on the list there, are no errors at runtime.
+		The fly method was added to all the instances of Man class so that, when the fly method is called on the list there, are no errors at runtime. It is possible to add a method to a single istance of a class but we have a problem: the function is not automatically bound when it's attached directly to an istance. Let's modify a little the previous code adding a method to the instance "john" of the "Man" class.
+		 
+		\begin{lstlisting}
+			def fly(self):
+				return "Takes a plane"
+			
+			john.fly = fly
+			
+			for i in v:
+				print(i.fly())
+		\end{lstlisting}
+		
+		Running the code we have the following error:
+		
+		\begin{lstlisting}
+			The duck is flying
+			The parrot is flying
+			Traceback (most recent call last):
+			File "/home/tommaso/git/ducktyping-tpl/code/pokelist.py", line 33, in <module>
+			print(i.fly())
+			TypeError: fly() takes exactly 1 argument (0 given)
+		\end{lstlisting}
+		
+		To bound the method properly to "john" we had to use the module \textit{types}:
+		
+		\begin{lstlisting}
+			import types
+			
+			john.fly = types.MethodType(fly, john)
+			
+			for i in v:
+				print(i.fly())
+		\end{lstlisting}
+		
+		We still have an error but this time is caused by the istance "jack", proving that we added the method fly only to one istance of Man. 
+		
+		\begin{lstlisting}
+			The duck is flying
+			The parrot is flying
+			Takes a plane
+			Traceback (most recent call last):
+			File "/home/tommaso/git/ducktyping-tpl/code/pokelist.py", line 35, in <module>
+			print(i.fly())
+			AttributeError: Man instance has no attribute 'fly'
+		\end{lstlisting}
+		
 		
 		
 		

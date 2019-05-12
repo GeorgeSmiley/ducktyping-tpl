@@ -18,4 +18,4 @@ eagle = Eagle()
 donald = Duck()
 
 
-print (eagle==donald)
+print (eagle<donald)
