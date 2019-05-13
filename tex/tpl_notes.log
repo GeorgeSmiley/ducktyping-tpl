@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.10)  12 MAY 2019 21:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.10)  13 MAY 2019 14:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -351,18 +351,6 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 \xmrgn=\skip48
 )
-(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2008/02/07
-
-Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
-<2008/02/07> (tvz)
-\FV@CodeLineNo=\count110
-\FV@InFile=\read1
-\FV@TabBox=\box29
-\c@FancyVerbLine=\count111
-\FV@StepNumber=\count112
-\FV@OutFile=\write3
-)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
@@ -392,16 +380,16 @@ LaTeX Font Info:    ... okay on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count113
+\scratchcounter=\count110
 \scratchdimen=\dimen116
-\scratchbox=\box30
-\nofMPsegments=\count114
-\nofMParguments=\count115
+\scratchbox=\box29
+\nofMPsegments=\count111
+\nofMParguments=\count112
 \everyMPshowfont=\toks17
-\MPscratchCnt=\count116
+\MPscratchCnt=\count113
 \MPscratchDim=\dimen117
-\MPnumerator=\count117
-\makeMPintoPDFobject=\count118
+\MPnumerator=\count114
+\makeMPintoPDFobject=\count115
 \everyMPtoPDFconversion=\toks18
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -420,7 +408,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box31
+\AtBeginShipoutBox=\box30
 Package hyperref Info: Link coloring OFF on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -429,17 +417,17 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count119
+\c@section@level=\count116
 )
 LaTeX Info: Redefining \ref on input line 33.
 LaTeX Info: Redefining \pageref on input line 33.
 LaTeX Info: Redefining \nameref on input line 33.
 
 (./tpl_notes.out) (./tpl_notes.out)
-\@outlinefile=\write4
-\openout4 = `tpl_notes.out'.
+\@outlinefile=\write3
+\openout3 = `tpl_notes.out'.
 
-\c@lstlisting=\count120
+\c@lstlisting=\count117
 LaTeX Font Info:    Try loading font information for U+msa on input line 35.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -453,17 +441,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-\tf@toc=\write5
-\openout5 = `tpl_notes.toc'.
+\tf@toc=\write4
+\openout4 = `tpl_notes.toc'.
 
  (./tpl_notes.lot)
-\tf@lot=\write6
-\openout6 = `tpl_notes.lot'.
+\tf@lot=\write5
+\openout5 = `tpl_notes.lot'.
 
 
 (./tpl_notes.lof)
-\tf@lof=\write7
-\openout7 = `tpl_notes.lof'.
+\tf@lof=\write6
+\openout6 = `tpl_notes.lof'.
 
  [2]
 <img/classification.png, id=144, 1606.0pt x 784.9325pt>
@@ -516,75 +504,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 145--146
 
  []
 
-[7]
-LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 192
+[7] [8]
+LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 228
 .
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [8]
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+) [9]
+Underfull \hbox (badness 10000) in paragraph at lines 264--265
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+
+ []
+
+[11] [12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 383--384
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--238
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
 
  []
 
-[9] [10] [11] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 347--348
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 349--350
-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 374--375
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 410--411
 
  []
 
 
-Overfull \hbox (59.48547pt too wide) in paragraph at lines 385--386
+Overfull \hbox (59.48547pt too wide) in paragraph at lines 421--422
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [] 
  []
 
-[14] [15] [16]
-Overfull \hbox (42.48962pt too wide) in paragraph at lines 497--498
+[15] [16] [17]
+Overfull \hbox (42.48962pt too wide) in paragraph at lines 533--534
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [] 
  []
 
-
-Overfull \hbox (42.48962pt too wide) in paragraph at lines 520--521
+[18]
+Overfull \hbox (42.48962pt too wide) in paragraph at lines 556--557
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 538.
-[17]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 538.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 574.
+[19]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 574.
  (./tpl_notes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 538.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 538.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 574.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 574.
 Package rerunfilecheck Info: File `tpl_notes.out' has not changed.
 (rerunfilecheck)             Checksum: E0E5450A4EDE4517EDB462FDBD204019;1455.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 538.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 574.
  ) 
 Here is how much of TeX's memory you used:
- 9702 strings out of 492982
- 136618 string characters out of 6134895
- 272148 words of memory out of 5000000
- 12874 multiletter control sequences out of 15000+600000
+ 9367 strings out of 492982
+ 131286 string characters out of 6134895
+ 266712 words of memory out of 5000000
+ 12532 multiletter control sequences out of 15000+600000
  20011 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,7n,42p,559b,2045s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,7n,42p,559b,2047s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf
 /fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/latxfont/lcircle1.pfb></usr/share/texmf/fonts/type1/publi
@@ -595,10 +583,10 @@ f/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public
 fb></usr/share/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf
 /fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/
 cm-super/sftt1095.pfb>
-Output written on tpl_notes.pdf (17 pages, 419514 bytes).
+Output written on tpl_notes.pdf (19 pages, 425471 bytes).
 PDF statistics:
- 538 PDF objects out of 1000 (max. 8388607)
- 500 compressed objects within 5 object streams
- 265 named destinations out of 1000 (max. 500000)
+ 558 PDF objects out of 1000 (max. 8388607)
+ 517 compressed objects within 6 object streams
+ 276 named destinations out of 1000 (max. 500000)
  192 words of extra memory for PDF output out of 10000 (max. 10000000)
 

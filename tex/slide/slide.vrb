@@ -1,0 +1,16 @@
+\frametitle{Some exceptions (2)}
+		In Python 2 "\textit{grather than}" and \textit{"less than"} are permitted:
+
+		\begin{lstlisting}
+		print("10">10)
+		print("10"<10)
+		\end{lstlisting}
+
+		Returning:
+
+		\begin{lstlisting}
+		True
+		False
+		\end{lstlisting}
+
+		Python 3 do not allowed to do "\textit{grather than}" and \textit{"less than"} controls like these.\\

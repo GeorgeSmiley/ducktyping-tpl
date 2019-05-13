@@ -11,7 +11,7 @@
 \usepackage[procnames]{listings}
 \usepackage{jlcode}
 \usepackage{color}
-\usepackage{fancyvrb}
+
 
 \definecolor{keywords}{RGB}{255,0,90}
 \definecolor{comments}{RGB}{0,0,113}
@@ -167,6 +167,42 @@
 			\end{enumerate}
 \newpage
 \section{Python introduction}
+	Python is a widely used general-purpose, high level programming language. It was initially designed by Guido van Rossum in 1991 and developed by Python Software Foundation. Python is an \textbf{interpreted}, \textbf{multi-paradigm} language. It support:
+	\begin{itemize}
+		\item Functional programming (non pure);
+		\item Procedural programming;
+		\item Objected oriented;
+	\end{itemize} 
+	Python uses \textbf{whitespace indentation}, rather than curly brackets or keywords, to delimit blocks. An increase in indentation comes after certain statements; a decrease in indentation signifies the end of the current block. \textit{Thus, the program's visual structure accurately represents the program's semantic structure}.\\
+	Python uses \textbf{strict semantic}. \\
+	It is usefull to recall the generale diffrences between \textbf{strict} and \textbf{lazy} evaluation:
+	\begin{itemize}
+		\item \textbf{Strict evaluation strategy}: the arguments of a function are fully evaluated to values before evaluating the function call, that is, before performing their replacement to formal parameters in the function body (\textbf{call by
+		value}).
+		\item \textbf{Non-strict or Lazy evaluation:} arguments are evaluated only if it is needed
+		in the function body(\textbf{for instance, call by name}) .
+	\end{itemize}
+	Consequences concern expressiveness of the language (such as the ability of
+	dealing with infinite lists) and the efficiency of the language implementation.
+	\begin{lstlisting}
+		def infiniteLoop(x):
+			while True:
+				print("do something with x")
+			return x
+		
+		5 in [5, 10, infiniteLoop(5)]
+	\end{lstlisting}
+	In Python we never get \textit{true} beacause  he forced the evaluation of the function wich is an infinite loop.\\
+	If we write the same code in \textbf{haskell} we get the \textit{true} value:
+	\begin{lstlisting}
+		elem 2 [2, 4, noreturn 5]
+	\end{lstlisting}
+	Typing:
+	\begin{itemize}
+		\item Python is \textbf{ dynamically typed},
+		\item is a \textbf{strongly typed} language,
+		\item use \textbf{duck typing}.
+	\end{itemize}
 \section{Python type checking}
 	\subsection{Dynamic and strongly typed}
 		Python is \textbf{dynamic}: objects have a type but it is determined at runtime. \\
@@ -192,41 +228,6 @@
 			TypeError: unsupported operand type(s) for +: 'int' and 'str'
 		\end{lstlisting}
 		
-		There are some operations (methods, we will see later introducing duck typing) used even in case of type incongruence. \\
-		The boolean equivalence is permitted in Python 2 and 3: 
-		
-		\begin{lstlisting}
-			print("10" == 10)
-			print("10" != 10)
-		\end{lstlisting}
-		
-		Returning:
-		
-		\begin{lstlisting}
-			False
-			True
-		\end{lstlisting}
-		
-		In Python 2 "\textit{grather than}" and \textit{"less than"} are permitted:
-		
-		\begin{lstlisting}
-			print("10">10)
-			print("10">=10)
-			print("10"<10)
-			print("10"<=10)
-		\end{lstlisting}
-		
-		Returning:
-		
-		\begin{lstlisting}
-			True
-			True
-			False
-			False
-		\end{lstlisting}
-		
-		Python 3 do not allowed to do "\textit{grather than}" and \textit{"less than"} controls.\\
-		
 		Another consequnce is that programmers are \textbf{free to bind the same names (variables) to different objects with a different type}. Then the following statements are perfectly legal:
 		
 		\begin{lstlisting}
@@ -239,6 +240,42 @@
 		Python is also \textbf{strongly typed} as the interpreter keeps track of all variables types. In Python is not allowed to perform operations inappropriate to the type of the object: attempting to add numbers to strings will fail.
 		
 		One of the advantage of the \textbf{strongly typing} for the \textbf{dynamic} language is that \textit{you can trust what's going on:} if you do something wrong, your program will generate a type error telling you where you went wrong, and you don't have to memorize a lot of arcane type-conversion rules or try to debug a situation where your variables have been silently changed without your knowledge.
+		
+		
+		There are some operations (methods, we will see later introducing duck typing) used even in case of type incongruence. \\
+		The boolean equivalence is permitted in Python 2 and 3: 
+		
+		\begin{lstlisting}
+		print("10" == 10)
+		print("10" != 10)
+		\end{lstlisting}
+		
+		Returning:
+		
+		\begin{lstlisting}
+		False
+		True
+		\end{lstlisting}
+		
+		In Python 2 "\textit{grather than}" and \textit{"less than"} are permitted:
+		
+		\begin{lstlisting}
+		print("10">10)
+		print("10">=10)
+		print("10"<10)
+		print("10"<=10)
+		\end{lstlisting}
+		
+		Returning:
+		
+		\begin{lstlisting}
+		True
+		True
+		False
+		False
+		\end{lstlisting}
+		
+		Python 3 do not allowed to do "\textit{grather than}" and \textit{"less than"} controls.\\
 		
 	\subsection{Annotations}
 		Annotations were introduced in Python 3.0 and are the main way to add type hints to the code. We can annotate both \textbf{function} and \textbf{variable}.
