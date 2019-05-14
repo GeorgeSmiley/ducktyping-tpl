@@ -79,7 +79,7 @@
 
 	\begin{frame}[fragile]
 		\frametitle{Semantic: Python vs Haskell}
-		In Python we never get \textit{true} beacause  he forced the evaluation of the function wich is an infinite loop:
+		In Python we never get \textit{true} beacause  it forces the evaluation of the function wich contains an infinite loop in the body:
 		\begin{lstlisting}
 			def infiniteLoop(x):
 			    while True:
@@ -99,7 +99,7 @@
 			\textbf{Type checking} is the process of verifying and enforces the typing rules of a language.
 		\begin{enumerate}
 			\item \textbf{Dynamic vs. Static}
-			\item \textbf{Weak vs Strong}.
+			\item \textbf{Weak vs. Strong}.
 		\end{enumerate}
 		
 		\begin{figure}[h!]
@@ -119,7 +119,7 @@
 				type checking is the process of verifying type constraints at runtime,
 				during execution.
 			\end{itemize}
-			\item \textbf{Weak vs Strong}\begin{itemize}
+			\item \textbf{Weak vs. Strong}\begin{itemize}
 				\item AGGIUNGERE STRONGLY
 				\item AGGIUNGERE WEAKLY	
 			\end{itemize}
@@ -132,8 +132,8 @@
 				\item Python is \textbf{dynamic}: 
 				\begin{itemize}
 					\item objects have a type but it is determined at runtime;
-					\item variables are not explicitly typed
-					\item an assignement binds a name to an object anche the object could be of any type
+					\item variables are not explicitly typed;
+					\item an assignement binds a name to an object and the object could be of any type;
 				\end{itemize}
 				\item Python is also \textbf{strongly typed}.
 			\end{enumerate}
@@ -220,9 +220,100 @@
 		Python 3 do not allowed to do "\textit{grather than}" and \textit{"less than"} controls like these.\\	
 	\end{frame}
 
-	\begin{frame}
+	\begin{frame}[fragile]
 		\frametitle{Annotations}
+			Annotations were introduced in Python 3.0 and are the main way to add type hints to the code. We can annotate both \textbf{function} and \textbf{variable}.
+			
+			\begin{lstlisting}
+				import math
+				
+				pi: float = 3.142
+				
+				def circumference(radius: float) -> float:
+					return 2 * math.pi * radius
+			\end{lstlisting}
+			
+			Type hints and annotations \textbf{\textit{do not add a real static typechecking}} in native Python so this should not effect the code performance.\\
 	\end{frame}
+
+	\begin{frame}
+		\frametitle{Annotations: why use it?}
+		\textbf{From PEP 484}:\\
+		\textit{" <...>using type hints for performance optimizations is left as an exercise for the reader"}.\\
+		
+		\textbf{Advantages:}
+		\begin{itemize}
+			\item Type hints help document your code;
+			\item Type hints improve IDEs and linters. This allows IDEs to offer better code completion and similar features.
+		\end{itemize}
+		\textbf{Disadvantages}
+		\begin{itemize}
+			\item Type hints take developer time and effort to add.
+			\item Type hints introduce a slight penalty in start-up time.
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}[fragile]
+		\frametitle{Object oriented (1)}
+	\begin{lstlisting}
+		class Duck():
+			def __init__(self, name, colour):
+				self.name = name
+				self.colour = colour
+			def quack(self):
+				return "Quaaack"
+			def fly(self):
+				return "The duck is flying"
+		
+		donald = Duck("Donald","white")
+				
+		donald.name
+		donald.colour
+		donald.quack()
+		donald.fly()
+		\end{lstlisting}
+	\end{frame}
+
+	\begin{frame}[fragile]
+		\frametitle{Object oriented (2)}
+		\begin{itemize}
+			\item The first argument of every class method is always a reference to the current instance of the class (\textit{\textbf{self}}).
+			\item The \textbf{\textit{self}} world is the equivalent of \textbf{\textit{this}} in \textbf{Java}. However Java do not requires to pass \textit{this} explicitly as a first parameter of a method: it could be used straight in the body of the method.
+			\item However self\textbf{ is not a reserved keyword} in Python, is just a strong convention.
+		\end{itemize}
+		\begin{lstlisting}[basicstyle=\fontsize{2}{4}\selectfont\ttfamily\tiny]
+		class Duck():
+			def __init__(myself, name, colour):
+				myself.name = name
+				myself.colour = colour
+			def quack(myself):
+				return "Quaaack"	
+			def fly(myself):
+				return "The duck is flying"
+		\end{lstlisting}
+	\end{frame}
+
+	\begin{frame}[fragile]
+		\frametitle{Object oriented (3)}
+		In Python \textbf{is not possible to define multiple constructor} for a class, still is possible to define a default value if one is not passed.
+		
+		\begin{lstlisting}
+		class Parrot():
+			def __init__(self, name = "Perry"):
+				self.name = name
+		
+		bird1 = Parrot()
+		bird2 = Parrot("Jack")
+		
+		print(bird1.name)
+		print(bird2.name)
+		\end{lstlisting}
+		The output would be:\\
+		"Perry"\\
+		"Jack"
+	\end{frame}
+
+	
 		
 	
 	

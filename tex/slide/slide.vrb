@@ -1,16 +1,17 @@
-\frametitle{Some exceptions (2)}
-		In Python 2 "\textit{grather than}" and \textit{"less than"} are permitted:
+\frametitle{Object oriented (3)}
+		In Python \textbf{is not possible to define multiple constructor} for a class, still is possible to define a default value if one is not passed.
 
 		\begin{lstlisting}
-		print("10">10)
-		print("10"<10)
+		class Parrot():
+			def __init__(self, name = "Perry"):
+				self.name = name
+
+		bird1 = Parrot()
+		bird2 = Parrot("Jack")
+
+		print(bird1.name)
+		print(bird2.name)
 		\end{lstlisting}
-
-		Returning:
-
-		\begin{lstlisting}
-		True
-		False
-		\end{lstlisting}
-
-		Python 3 do not allowed to do "\textit{grather than}" and \textit{"less than"} controls like these.\\
+		The output would be:\\
+		"Perry"\\
+		"Jack"
