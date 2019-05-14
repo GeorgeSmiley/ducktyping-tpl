@@ -1,17 +1,21 @@
-\frametitle{Object oriented (3)}
-		In Python \textbf{is not possible to define multiple constructor} for a class, still is possible to define a default value if one is not passed.
+\frametitle{Duck typing: dependency injection (2)}
+		In a language \textbf{without} duck typing is necessary to declare an explicit interface (\textit{IEngine}), its implementation (\textit{EngineV8}) and explicit define my Car parameter to be an implementation of \textit{IEngine}.
 
-		\begin{lstlisting}
-		class Parrot():
-			def __init__(self, name = "Perry"):
-				self.name = name
+		\begin{lstlisting}[basicstyle=\fontsize{2}{4}\selectfont\ttfamily\tiny]
+		interface IEngine {
+			void turnOn();
+		}
+		public class EngineV8 implements IEngine {
+			public void turnOn() {
+				// do something here
+		}}
 
-		bird1 = Parrot()
-		bird2 = Parrot("Jack")
+		public class Car {
+			public Car(IEngine engine) {
+				this.engine = engine;
+		}}
 
-		print(bird1.name)
-		print(bird2.name)
+		public void run() {
+			this.engine.turnOn();
+			}
 		\end{lstlisting}
-		The output would be:\\
-		"Perry"\\
-		"Jack"

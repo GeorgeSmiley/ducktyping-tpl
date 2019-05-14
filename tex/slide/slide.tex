@@ -313,7 +313,111 @@
 		"Jack"
 	\end{frame}
 
+	\begin{frame}
+		\frametitle{Duck typing}
+		\textit{ If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck.}\\
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[scale=0.85]{img/duck.png}
+			\label{Interfacce di un CS}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Duck typing: main idea}
+		\begin{itemize}
+			\item 	Duck typing is a concept related to dynamic typing in an object oriented language. 
+			\item Is a feature in which the semantics of a class is determined by its ability to respond to some message (method or property) rather than being the extension of a class or an implementation of an interface. \\
+			\item \textbf{The idea is that it doesn't actually matter what type my data is - just whether or not i can do what i want with it.}
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}[fragile]
+		\frametitle{Duck typing: example (1)}
+		\begin{lstlisting}[basicstyle=\fontsize{2}{4}\selectfont\ttfamily\tiny]
+		class Duck():
+			def quack(self):
+				return "Quaaack"
+			def fly(self):
+				return "The duck is flying"
+		
+		class Parrot():
+			def quack(self):
+				return "The parrot parrots a quack"
+			def fly(self):
+				return "The parrot is flying"
+		
+		class Man():
+			def quack(self):
+				return "The man parrots a quack too"
+
+		v = [Duck(), Parrot(), Man()]
+		
+		for i in v:
+			print(i.quack())
+		\end{lstlisting}
+	\end{frame}
+
+	\begin{frame}[fragile]
+		\frametitle{Duck typing: example (2)}
+		\begin{lstlisting}	
+			for i in v:
+				print(i.fly())
+		\end{lstlisting}
+		
+		If we try to use the \textit{fly()} method  over the entire collection of objects an error is raised at runtime:
+		
+		\begin{lstlisting}
+  Traceback (most recent call last):
+  File "/home/tommaso/git/ducktyping-tpl/code/ducklist.py", line 23, in <module>
+  print(i.fly())
+  AttributeError: Man instance has no attribute 'fly'
+		\end{lstlisting}
+	\end{frame}
+
+	\begin{frame}[fragile]
+		\frametitle{Duck typing: dependency injection (1)}
+		\begin{lstlisting}
+		class Car:
+			def __init__(self, engine):
+				self.engine = engine
+			def run():
+				self.engine.turn_on()			
+		\end{lstlisting}
+		
+		\begin{itemize}
+			\item This is a classical example of \textbf{dependency injection};
+			\item Note that my Car does not depends on any concrete implementation of engine: Just using a dependency injected instance of something that responds to a \textit{turn\_on} message;
+			\item I could say my class Car depends on an interface. But I did not have to declare it. \textbf{It is an "automatic interface".}\\
+		\end{itemize}	
+	\end{frame}
+
+	\begin{frame}[fragile]
+		\frametitle{Duck typing: dependency injection (2)}
+		In a language \textbf{without} duck typing is necessary to declare an explicit interface (\textit{IEngine}), its implementation (\textit{EngineV8}) and explicit define my Car parameter to be an implementation of \textit{IEngine}.	
+		
+		\begin{lstlisting}[basicstyle=\fontsize{2}{4}\selectfont\ttfamily\tiny]
+		interface IEngine {
+			void turnOn();
+		}
+		public class EngineV8 implements IEngine {
+			public void turnOn() {
+				// do something here
+		}}
+		
+		public class Car {
+			public Car(IEngine engine) {
+				this.engine = engine;
+		}}
+		
+		public void run() {
+			this.engine.turnOn();
+			}
+		\end{lstlisting}
+	\end{frame}
+
 	
+
 		
 	
 	
