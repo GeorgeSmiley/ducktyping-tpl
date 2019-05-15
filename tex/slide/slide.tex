@@ -94,19 +94,15 @@
 		\end{lstlisting}
 	\end{frame}
 
-	\begin{frame}
-		\frametitle{Type checker (1)}
-			\textbf{Type checking} is the process of verifying and enforces the typing rules of a language.
-		\begin{enumerate}
-			\item \textbf{Dynamic vs. Static}
-			\item \textbf{Weak vs. Strong}.
-		\end{enumerate}
+%	\begin{frame}
+%		\frametitle{Type checker (1)}
+%			\textbf{Type checking} is the process of verifying and enforces the typing rules of a language.
+%		\begin{enumerate}
+%			\item \textbf{Dynamic vs. Static}
+%			\item \textbf{Weak vs. Strong}.
+%		\end{enumerate}
 		
-		\begin{figure}[h!]
-			\centering
-			\includegraphics[scale=0.14]{img/classification.png}
-		\end{figure}
-	\end{frame}
+%	\end{frame}
 
 	\begin{frame}
 		\frametitle{Type checker (2) }
@@ -137,6 +133,10 @@
 				\end{itemize}
 				\item Python is also \textbf{strongly typed}.
 			\end{enumerate}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.14]{img/classification.png}
+			\end{figure}
 			Let's see the implications by some example.
 	\end{frame}
 
@@ -413,6 +413,96 @@
 		public void run() {
 			this.engine.turnOn();
 			}
+		\end{lstlisting}
+	\end{frame}
+
+	\begin{frame}[fragile]
+		\frametitle{Add method to a class}
+			In Python, due to the duck typing, there is the chance to add methods to the classes. 
+		\begin{itemize}
+			\item \textbf{Function};
+			\item \textbf{Bound method}.
+		\end{itemize}
+	
+		\begin{lstlisting}
+		>>> def foo():
+		...     print "foo"
+		>>> class A:
+		...     def bar( self ):
+		...         print "bar"
+		>>> a = A()
+		>>> foo
+		
+		<function foo at 0x00A98D70>
+		>>> a.bar
+		<bound method A.bar of <__main__.A instance at 0x00A9BC88>>
+		\end{lstlisting}
+	\end{frame}
+
+	\begin{frame}[fragile]
+		\frametitle{Add method to a class: example}
+		\begin{lstlisting}
+		donald = Duck()
+		charlie = Parrot()
+		john = Man("John")
+		jack = Man("Jack")
+		v = [donald, charlie, john, jack]
+		
+		def fly(self):
+			return "Takes a plane"
+		
+		Man.fly = fly
+		
+		for i in v:
+			print(i.fly())
+		\end{lstlisting}
+	\end{frame}
+
+	\begin{frame}[fragile]
+		\frametitle{Add method to a single instance of a class (1)}
+			It is possible to add a method to a single istance of a class but we have a problem: \textbf{the function is not automatically bound} when it's attached directly to an istance.
+			
+				\begin{lstlisting}
+			john.fly = fly
+			
+			for i in v:
+				print(i.fly())
+				
+The duck is flying
+The parrot is flying
+Traceback (most recent call last):
+File "/home/tommaso/git/ducktyping-tpl/code/pokelist.py", line 33, in <module> print(i.fly())
+TypeError: fly() takes exactly 1 argument (0 given)
+			\end{lstlisting}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Add method to a single instance of a class (2)}
+			
+		To bound the method properly to "john" we had to use the module \textit{types}:
+		
+		\begin{lstlisting}
+		import types
+		
+		john.fly = types.MethodType(fly, john)
+		
+		for i in v:
+			print(i.fly())
+		\end{lstlisting}
+	\end{frame}
+
+	\begin{frame}[fragile]
+		\frametitle{Add method to a single instance of a class (3)}
+			We still have an error but this time is caused by the istance "jack", proving that we added the method fly only to one istance of Man. 
+		
+		\begin{lstlisting}
+		The duck is flying
+		The parrot is flying
+		Takes a plane
+		Traceback (most recent call last):
+		File "/home/tommaso/git/ducktyping-tpl/code/pokelist.py", line 35, in <module>
+		print(i.fly())
+		AttributeError: Man instance has no attribute 'fly'
 		\end{lstlisting}
 	\end{frame}
 

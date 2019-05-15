@@ -1,21 +1,12 @@
-\frametitle{Duck typing: dependency injection (2)}
-		In a language \textbf{without} duck typing is necessary to declare an explicit interface (\textit{IEngine}), its implementation (\textit{EngineV8}) and explicit define my Car parameter to be an implementation of \textit{IEngine}.
+\frametitle{Add method to a single instance of a class (3)}
+			We still have an error but this time is caused by the istance "jack", proving that we added the method fly only to one istance of Man.
 
-		\begin{lstlisting}[basicstyle=\fontsize{2}{4}\selectfont\ttfamily\tiny]
-		interface IEngine {
-			void turnOn();
-		}
-		public class EngineV8 implements IEngine {
-			public void turnOn() {
-				// do something here
-		}}
-
-		public class Car {
-			public Car(IEngine engine) {
-				this.engine = engine;
-		}}
-
-		public void run() {
-			this.engine.turnOn();
-			}
+		\begin{lstlisting}
+		The duck is flying
+		The parrot is flying
+		Takes a plane
+		Traceback (most recent call last):
+		File "/home/tommaso/git/ducktyping-tpl/code/pokelist.py", line 35, in <module>
+		print(i.fly())
+		AttributeError: Man instance has no attribute 'fly'
 		\end{lstlisting}
