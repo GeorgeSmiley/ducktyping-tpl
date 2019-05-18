@@ -1,11 +1,14 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.10)  16 MAY 2019 13:25
-entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.12.9)  18 MAY 2019 16:18
+ restricted system commands enabled.
 **slide.tex
 (./slide.tex
 LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+[\directlua]:1: module 'luaotfload-main' not found:
+	no field package.preload['luaotfload-main']
+	[kpse lua searcher] file not found: 'luaotfload-main'
+	[kpse C searcher] file not found: 'luaotfload-main'
+Error in luaotfload: reverting to OT1
+Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2018/02/20 v3.50 A class for typesetting presentations
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasemodes.sty
@@ -103,7 +106,11 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
-)
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 54.
+
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
@@ -117,10 +124,10 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: luatex.def on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/luatex.def
+File: luatex.def 2018/01/08 v1.0l Graphics/color driver for luatex
 ))
 \Gin@req@height=\dimen126
 \Gin@req@width=\dimen127
@@ -172,10 +179,10 @@ ex
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
-Driver file for pgf: pgfsys-pdftex.def
+Driver file for pgf: pgfsys-luatex.def
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
-File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-luatex.def
+File: pgfsys-luatex.def 2014/10/11  (rcs-revision 1.35)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
 f
@@ -197,7 +204,7 @@ Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Package option `usenames' ignored on input line 216.
-Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Driver file: luatex.def on input line 225.
 
 (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
@@ -371,33 +378,31 @@ Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
-
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
 Package hobsub Info: Skipping package `ltxcmds' (already loaded).
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
+Package ifluatex Info: LuaTeX detected.
 Package hobsub Info: Skipping package `ifvtex' (already loaded).
 Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
 Package hobsub Info: Skipping package `ifpdf' (already loaded).
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
-)
-Package pdftexcmds Info: LuaTeX not detected.
+Package: luatex-loader 2016/05/16 v0.6 Lua module loader (HO)
+
+(/usr/share/texlive/texmf-dist/scripts/oberdiek/oberdiek.luatex.lua)
+Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO)
+
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
+\pdftexcmds@toks=\toks28
 Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
-)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO)
+
 Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
 Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
 )
@@ -464,16 +469,16 @@ LaTeX Info: Redefining \pageref on input line 6443.
 Package hyperref Message: Stopped early.
 
 )
-Package hyperref Info: Driver (autodetected): hpdftex.
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
+Package hyperref Info: Driver (autodetected): hluatex.
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hluatex.def
+File: hluatex.def 2018/02/06 v6.86b Hyperref driver for luaTeX
 \Fld@listcount=\count126
 \c@bookmark@seq@number=\count127
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-82.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
+2.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaserequires.sty
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasecompatibility.sty)
@@ -483,17 +488,11 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks28
+\@emptytoks=\toks29
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-(/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
-Package: sansmathaccent 2013/03/28
-
-(/usr/share/texlive/texmf-dist/tex/latex/filehook/filehook.sty
-Package: filehook 2011/10/12 v0.5d Hooks for input files
 )))
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty
@@ -526,7 +525,7 @@ Package: translator 2018/01/04 v1.12 Easy translation of strings in LaTeX
 \beamer@framebottomskip=\skip49
 \beamer@frametopskipautobreak=\skip50
 \beamer@framebottomskipautobreak=\skip51
-\beamer@envbody=\toks29
+\beamer@envbody=\toks30
 \framewidth=\dimen170
 \c@framenumber=\count138
 )
@@ -537,8 +536,8 @@ Package: translator 2018/01/04 v1.12 Easy translation of strings in LaTeX
 \beamer@splitbox=\box43
 \beamer@autobreakcount=\count139
 \beamer@autobreaklastheight=\dimen171
-\beamer@frametitletoks=\toks30
-\beamer@framesubtitletoks=\toks31
+\beamer@frametitletoks=\toks31
+\beamer@framesubtitletoks=\toks32
 )
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseframecomponents.sty
 \beamer@footins=\box44
@@ -553,7 +552,7 @@ Package: translator 2018/01/04 v1.12 Easy translation of strings in LaTeX
 )
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetoc.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetemplates.sty
-\beamer@sbttoks=\toks32
+\beamer@sbttoks=\toks33
 
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseauxtemplates.sty
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseboxes.sty
@@ -572,7 +571,7 @@ Package: translator 2018/01/04 v1.12 Easy translation of strings in LaTeX
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaselocalstructure.sty
 (/usr/share/texlive/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
-\@enLab=\toks33
+\@enLab=\toks34
 )
 \c@figure=\count140
 \c@table=\count141
@@ -593,7 +592,7 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks34
+\@emptytoks=\toks35
 \ex@=\dimen181
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -623,39 +622,45 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \dotsspace@=\muskip11
 \c@parentequation=\count149
 \dspbrk@lvl=\count150
-\tag@help=\toks35
+\tag@help=\toks36
 \row@=\count151
 \column@=\count152
 \maxfields@=\count153
-\andhelp@=\toks36
+\andhelp@=\toks37
 \eqnshift@=\dimen184
 \alignsep@=\dimen185
 \tagshift@=\dimen186
 \tagwidth@=\dimen187
 \totwidth@=\dimen188
 \lineht@=\dimen189
-\@envbody=\toks37
+\@envbody=\toks38
 \multlinegap=\skip55
 \multlinetaggap=\skip56
-\mathdisplay@stack=\toks38
+\mathdisplay@stack=\toks39
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks39
-\thm@bodyfont=\toks40
-\thm@headfont=\toks41
-\thm@notefont=\toks42
-\thm@headpunct=\toks43
+\thm@style=\toks40
+\thm@bodyfont=\toks41
+\thm@headfont=\toks42
+\thm@notefont=\toks43
+\thm@headpunct=\toks44
 \thm@preskip=\skip57
 \thm@postskip=\skip58
 \thm@headsep=\skip59
-\dth@everypar=\toks44
+\dth@everypar=\toks45
 )
 \c@theorem=\count154
 )
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasethemes.sty))
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 363.
+
+
+(/usr/share/texmf/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemedefault.sty
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerfontthemedefault.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemedefault.sty)
@@ -670,6 +675,12 @@ Package: babel 2018/02/14 3.18 The Babel package
 (/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
 File: switch.def 2018/02/14 3.18 Babel switching mechanism
 )
+(/usr/share/texlive/texmf-dist/tex/generic/babel/luababel.def
+\l@dumylang=\language2
+Package babel Info: Non-standard hyphenation setup on input line 113.
+\l@nohyphenation=\language3
+\l@italian=\language4
+)
 (/usr/share/texlive/texmf-dist/tex/generic/babel-italian/italian.ldf
 Language: italian 2015/03/26 v1.3n Italian support from the babel system
 
@@ -678,15 +689,18 @@ File: babel.def 2018/02/14 3.18 Babel common definitions
 \babel@savecnt=\count155
 \U@D=\dimen192
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/luababel.def)
 LaTeX Info: Redefining \textlatin on input line 1839.
-\bbl@dirlevel=\count156
 )
-\it@lettering=\count157
-\it@doublequoteactive=\count158
-\it@ISOcompliance=\count159
-))
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/txfonts.sty
+\it@lettering=\count156
+\it@doublequoteactive=\count157
+\it@ISOcompliance=\count158
+
+(/usr/share/texlive/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-it.tex
+UTF-8 Italian hyphenation patterns
+(/usr/share/texlive/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-it.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-
+it.tex)))) (/usr/share/texlive/texmf-dist/tex/latex/txfonts/txfonts.sty
 Package: txfonts 2008/01/22 v3.2.1
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -774,12 +788,11 @@ LaTeX Info: Redefining \textsquare on input line 1063.
 LaTeX Info: Redefining \openbox on input line 1064.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemeBerlin.sty
-(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthememiniframes.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthememiniframes.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerectangles.sty)
-) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty)
-\c@definizione=\count160
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerectangles.sty))
+ (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty)
+\c@definizione=\count159
 
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
@@ -811,8 +824,8 @@ Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen195
 \pgffor@skip=\dimen196
-\pgffor@stack=\toks45
-\pgffor@toks=\toks46
+\pgffor@stack=\toks46
+\pgffor@toks=\toks47
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
@@ -820,7 +833,7 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count161
+\pgf@plot@mark@count=\count160
 \pgfplotmarksize=\dimen197
 )
 \tikz@lastx=\dimen198
@@ -833,18 +846,18 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@figbox@bg=\box55
 \tikz@tempbox=\box56
 \tikz@tempbox@bg=\box57
-\tikztreelevel=\count162
-\tikznumberofchildren=\count163
-\tikznumberofcurrentchild=\count164
-\tikz@fig@count=\count165
+\tikztreelevel=\count161
+\tikznumberofchildren=\count162
+\tikznumberofcurrentchild=\count163
+\tikz@fig@count=\count164
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count166
-\pgfmatrixcurrentcolumn=\count167
-\pgf@matrix@numberofcolumns=\count168
+\pgfmatrixcurrentrow=\count165
+\pgfmatrixcurrentcolumn=\count166
+\pgf@matrix@numberofcolumns=\count167
 )
-\tikz@expandcount=\count169
+\tikz@expandcount=\count168
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -866,10 +879,10 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigbottomskip=\skip62
 \subfigcapmargin=\dimen262
 \subfiglabelskip=\skip63
-\c@subfigure=\count170
-\c@lofdepth=\count171
-\c@subtable=\count172
-\c@lotdepth=\count173
+\c@subfigure=\count169
+\c@lofdepth=\count170
+\c@subtable=\count171
+\c@lotdepth=\count172
 
 ****************************************
 * Local config file subfigure.cfg used *
@@ -879,23 +892,23 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfig@bottom=\skip65
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count174
+\lst@mode=\count173
 \lst@gtempboxa=\box58
-\lst@token=\toks47
-\lst@length=\count175
+\lst@token=\toks48
+\lst@length=\count174
 \lst@currlwidth=\dimen263
-\lst@column=\count176
-\lst@pos=\count177
+\lst@column=\count175
+\lst@pos=\count176
 \lst@lostspace=\dimen264
 \lst@width=\dimen265
-\lst@newlines=\count178
-\lst@lineno=\count179
+\lst@newlines=\count177
+\lst@lineno=\count178
 \lst@maxwidth=\dimen266
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count180
-\lst@skipnumbers=\count181
+\c@lstnumber=\count179
+\lst@skipnumbers=\count180
 \lst@framebox=\box59
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
@@ -948,7 +961,6 @@ Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
 Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
 Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
 Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
-
 Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
 Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
 Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
@@ -997,23 +1009,27 @@ Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 105.
+
+(/usr/share/texmf/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count182
-\calc@Bcount=\count183
+\calc@Acount=\count181
+\calc@Bcount=\count182
 \calc@Adimen=\dimen267
 \calc@Bdimen=\dimen268
 \calc@Askip=\skip66
 \calc@Bskip=\skip67
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count184
+\calc@Ccount=\count183
 \calc@Cskip=\skip68
 )
 \bfem=\skip69
 LaTeX Font Info:    Try loading font information for T1+txtt on input line 424.
-
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
@@ -1026,12 +1042,14 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 
 LaTeX Warning: Label `Interfacce di un CS' multiply defined.
 
+
+LaTeX Warning: Label `Interfacce di un CS' multiply defined.
+
 )
-\openout1 = `slide.aux'.
+\openout1 = slide.aux
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 40.
 LaTeX Font Info:    Try loading font information for OML+txmi on input line 40.
-
  (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
@@ -1043,14 +1061,14 @@ LaTeX Font Info:    ... okay on input line 40.
 LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 40.
 LaTeX Font Info:    Try loading font information for OMS+txsy on input line 40.
 
-
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
 LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 40.
 LaTeX Font Info:    Try loading font information for OMX+txex on input line 40.
-
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
@@ -1116,33 +1134,33 @@ LaTeX Font Info:    Font shape `T1/txss/m/n' will be
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count185
+\scratchcounter=\count184
 \scratchdimen=\dimen269
 \scratchbox=\box61
-\nofMPsegments=\count186
-\nofMParguments=\count187
-\everyMPshowfont=\toks48
-\MPscratchCnt=\count188
+\nofMPsegments=\count185
+\nofMParguments=\count186
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count187
 \MPscratchDim=\dimen270
-\MPnumerator=\count189
-\makeMPintoPDFobject=\count190
-\everyMPtoPDFconversion=\toks49
+\MPnumerator=\count188
+\makeMPintoPDFobject=\count189
+\everyMPtoPDFconversion=\toks50
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 43
+8.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG
+,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box62
@@ -1154,7 +1172,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count191
+\c@section@level=\count190
 )
 LaTeX Info: Redefining \ref on input line 40.
 LaTeX Info: Redefining \pageref on input line 40.
@@ -1162,8 +1180,8 @@ LaTeX Info: Redefining \nameref on input line 40.
 
 (./slide.out) (./slide.out)
 \@outlinefile=\write5
-\openout5 = `slide.out'.
 
+\openout5 = slide.out
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/txr/m/n --> OT1/cmss/m/n on input line 40.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
@@ -1233,7 +1251,7 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 LaTeX Info: Redefining \it@ocap on input line 40.
 LaTeX Info: Redefining \it@ccap on input line 40.
-\c@lstlisting=\count192
+\c@lstlisting=\count191
  (./slide.nav)
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
 (Font)              scaled to size 5.69998pt on input line 40.
@@ -1244,8 +1262,8 @@ LaTeX Font Info:    Font shape `T1/txss/m/n' will be
 <img/cartoonduck.jpg, id=14, 72.27pt x 41.4348pt>
 File: img/cartoonduck.jpg Graphic file (type jpg)
 <use img/cartoonduck.jpg>
-Package pdftex.def Info: img/cartoonduck.jpg  used on input line 49.
-(pdftex.def)             Requested size: 144.53961pt x 82.86935pt.
+Package luatex.def Info: img/cartoonduck.jpg  used on input line 49.
+(luatex.def)             Requested size: 144.53961pt x 82.86935pt.
 
 Overfull \vbox (14.03577pt too high) detected at line 49
  []
@@ -1254,238 +1272,225 @@ LaTeX Font Info:    Font shape `T1/txss/m/n' will be
 (Font)              scaled to size 3.79999pt on input line 49.
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/cartoonduck.jpg>]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<./img/cartoonduck.jpg>]
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 70.
+(Font)              scaled to size 9.49997pt on input line 72.
 
 [2
 
 ]
 LaTeX Font Info:    Font shape `T1/txss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/txss/m/sl' tried instead on input line 80.
+(Font)              Font shape `T1/txss/m/sl' tried instead on input line 87.
 LaTeX Font Info:    Font shape `T1/txss/m/sl' will be
-(Font)              scaled to size 10.40245pt on input line 80.
+(Font)              scaled to size 10.40245pt on input line 87.
 LaTeX Font Info:    Font shape `T1/txss/bx/it' in size <10.95> not available
-(Font)              Font shape `T1/txss/bx/sl' tried instead on input line 80.
+(Font)              Font shape `T1/txss/bx/sl' tried instead on input line 87.
 LaTeX Font Info:    Font shape `T1/txss/bx/sl' will be
-(Font)              scaled to size 10.40245pt on input line 80.
+(Font)              scaled to size 10.40245pt on input line 87.
 LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
-(Font)              scaled to size 10.40245pt on input line 80.
- [3
+(Font)              scaled to size 10.40245pt on input line 87.
+<img/python.png, id=78, 602.25pt x 400.49625pt>
+File: img/python.png Graphic file (type png)
+<use img/python.png>
+Package luatex.def Info: img/python.png  used on input line 87.
+(luatex.def)             Requested size: 180.67639pt x 120.1498pt.
 
-] [4
+warning  (pdf backend): ignoring duplicate destination with the name 'Interfacce
+\040di\040un\040CS'
+
+Overfull \vbox (23.26843pt too high) detected at line 87
+ []
+
+[3
+
+<./img/python.png>] [4
 
 ]
-\openout4 = `slide.vrb'.
-
+\openout4 = slide.vrb
  (./slide.vrb
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
 (Font)              scaled to size 1.9pt on input line 3.
 ) [5
 
 ]
-LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
-(Font)              scaled to size 9.49997pt on input line 139.
- [6
-
-]
-<img/classification.png, id=186, 1606.0pt x 784.9325pt>
+<img/classification.png, id=167, 1606.0pt x 784.9325pt>
 File: img/classification.png Graphic file (type png)
 <use img/classification.png>
-Package pdftex.def Info: img/classification.png  used on input line 157.
-(pdftex.def)             Requested size: 224.83847pt x 109.8898pt.
+Package luatex.def Info: img/classification.png  used on input line 131.
+(luatex.def)             Requested size: 224.83847pt x 109.8898pt.
+ [6
 
-Overfull \vbox (24.85533pt too high) detected at line 157
- []
+<./img/classification.png>]
+LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
+(Font)              scaled to size 9.49997pt on input line 151.
 
 [7
 
- <./img/classification.png>]
-\openout4 = `slide.vrb'.
+] [8
 
+] [9
+
+] [10
+
+]
+\openout4 = slide.vrb
  (./slide.vrb
-LaTeX Font Info:    Try loading font information for TS1+txtt on input line 13.
-
+LaTeX Font Info:    Try loading font information for TS1+txtt on input line 15.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txtt.fd
 File: ts1txtt.fd 2000/12/15 v3.1
-)) [8
+)) [11
 
 ]
-\openout4 = `slide.vrb'.
-
- (./slide.vrb) [9
-
-]
-\openout4 = `slide.vrb'.
-
- (./slide.vrb) [10
-
-]
-\openout4 = `slide.vrb'.
-
- (./slide.vrb) [11
-
-]
-\openout4 = `slide.vrb'.
-
+\openout4 = slide.vrb
  (./slide.vrb) [12
 
 ]
-\openout4 = `slide.vrb'.
-
- (./slide.vrb)
-[13
-
-] [14
+\openout4 = slide.vrb
+ (./slide.vrb) [13
 
 ]
-\openout4 = `slide.vrb'.
+\openout4 = slide.vrb
+ (./slide.vrb) [14
 
- (./slide.vrb) [15
-
-]
-\openout4 = `slide.vrb'.
-
- (./slide.vrb)
-Overfull \vbox (1.7717pt too high) detected at line 310
- []
-
-[16
+] [15
 
 ]
-\openout4 = `slide.vrb'.
-
- (./slide.vrb) [17
+\openout4 = slide.vrb
+ (./slide.vrb) [16
 
 ]
-<img/duck.png, id=481, 239.89626pt x 211.79124pt>
+\openout4 = slide.vrb
+
+(./slide.vrb) [17
+
+]
+\openout4 = slide.vrb
+ (./slide.vrb) [18
+
+]
+<img/duck.png, id=525, 239.89626pt x 211.79124pt>
 File: img/duck.png Graphic file (type png)
 <use img/duck.png>
-Package pdftex.def Info: img/duck.png  used on input line 340.
-(pdftex.def)             Requested size: 203.91277pt x 180.0234pt.
-pdfTeX warning (ext4): destination with the same identifier (name{Interfacce\04
-0di\040un\040CS}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.340 	\end{frame}
-                  
-Overfull \vbox (27.74202pt too high) detected at line 340
+Package luatex.def Info: img/duck.png  used on input line 381.
+(luatex.def)             Requested size: 203.91277pt x 180.0234pt.
+
+warning  (pdf backend): ignoring duplicate destination with the name 'Interfacce
+\040di\040un\040CS'
+
+Overfull \vbox (27.74202pt too high) detected at line 381
  []
 
-[18
+[19
 
- <./img/duck.png>] [19
-
-]
-\openout4 = `slide.vrb'.
-
- (./slide.vrb) [20
+<./img/duck.png>] [20
 
 ]
-\openout4 = `slide.vrb'.
-
- (./slide.vrb) [21
-
-]
-\openout4 = `slide.vrb'.
-
+\openout4 = slide.vrb
  (./slide.vrb)
-[22
+Overfull \vbox (1.32141pt too high) detected at line 417
+ []
+
+[21
 
 ]
-\openout4 = `slide.vrb'.
+\openout4 = slide.vrb
+ (./slide.vrb) [22
 
+]
+\openout4 = slide.vrb
+ (./slide.vrb) [23
+
+]
+\openout4 = slide.vrb
+ (./slide.vrb) [24
+
+]
+\openout4 = slide.vrb
  (./slide.vrb)
-Overfull \vbox (11.97168pt too high) detected at line 433
+Overfull \vbox (11.97168pt too high) detected at line 499
  []
 
-[23
+[25
 
 ]
-\openout4 = `slide.vrb'.
-
+\openout4 = slide.vrb
  (./slide.vrb)
-Overfull \vbox (9.22151pt too high) detected at line 456
+Overfull \vbox (14.62148pt too high) detected at line 526
  []
 
-[24
+[26
 
 ]
-\openout4 = `slide.vrb'.
-
- (./slide.vrb) [25
-
-]
-\openout4 = `slide.vrb'.
-
- (./slide.vrb
-Overfull \hbox (54.59998pt too wide) in paragraph at lines 13--14
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
-[][][][][][][][][][][][][][] 
- []
-
-) [26
-
-]
-\openout4 = `slide.vrb'.
-
+\openout4 = slide.vrb
  (./slide.vrb) [27
 
 ]
-\openout4 = `slide.vrb'.
-
- (./slide.vrb
-Overfull \hbox (25.2pt too wide) in paragraph at lines 9--10
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
- 
+\openout4 = slide.vrb
+ (./slide.vrb)
+Overfull \vbox (7.12154pt too high) detected at line 569
  []
 
-) [28
+[28
+
+]
+\openout4 = slide.vrb
+ (./slide.vrb) [29
+
+]
+\openout4 = slide.vrb
+ (./slide.vrb) [30
+
+]
+\openout4 = slide.vrb
+ (./slide.vrb) [31
+
+] [32
 
 ]
 \tf@nav=\write6
-\openout6 = `slide.nav'.
 
+\openout6 = slide.nav
 \tf@toc=\write7
-\openout7 = `slide.toc'.
 
+\openout7 = slide.toc
 \tf@snm=\write8
-\openout8 = `slide.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 542.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 542.
+\openout8 = slide.snm
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 645.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 645.
  (./slide.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 542.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 542.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 645.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 645.
 Package rerunfilecheck Info: File `slide.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
- ) 
-Here is how much of TeX's memory you used:
- 24587 strings out of 492982
- 462824 string characters out of 6134895
- 581507 words of memory out of 5000000
- 27507 multiletter control sequences out of 15000+600000
- 38041 words of font info for 51 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 56i,15n,59p,799b,1605s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/txfonts/tcxtt.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/hel
-vetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on slide.pdf (28 pages, 288833 bytes).
-PDF statistics:
- 811 PDF objects out of 1000 (max. 8388607)
- 752 compressed objects within 8 object streams
- 58 named destinations out of 1000 (max. 500000)
- 70 words of extra memory for PDF output out of 10000 (max. 10000000)
+)
+
+Here is how much of LuaTeX's memory you used:
+ 25909 strings out of 494480
+ 100000,662416 words of node,token memory allocated
+ 1637 words of node memory still in use:
+   42 hlist, 15 vlist, 7 rule, 2 disc, 7 local_par, 50 glue, 4 kern, 14 penalty,
+ 12 glyph, 67 glue_spec, 3 write, 28 pdf_colorstack nodes
+   avail lists: 1:4,2:27,3:423,4:1262,5:751,6:1379,7:1689,8:586,9:1726,10:16,11:
+163
+ 28520 multiletter control sequences out of 65536+600000
+ 57 fonts using 2367963 bytes
+ 55i,15n,57p,798b,1249s stack positions out of 5000i,500n,10000p,200000b,100000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/txfonts/tcxtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/u
+hvr8a.pfb>
+Output written on slide.pdf (32 pages, 301535 bytes).
+
+PDF statistics: 935 PDF objects out of 1000 (max. 8388607)
+ 871 compressed objects within 9 object streams
+ 66 named destinations out of 1000 (max. 131072)
+ 34 words of extra memory for PDF output out of 10000 (max. 100000000)
 

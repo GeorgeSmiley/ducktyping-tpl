@@ -1,10 +1,14 @@
-class Duck():
+class Bird():
+	def fly():
+		pass
+
+class Duck(Bird):
 	def quack(self):
 		return "Quaaack"
 	def fly(self):
 		return "The duck is flying"
 
-class Parrot():
+class Parrot(Bird):
 	def quack(self):
 		return "The parrot parrots a quack"
 	def fly(self):

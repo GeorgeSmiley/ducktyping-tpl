@@ -53,8 +53,9 @@
 		\begin{enumerate}
 			\item Introduction
 			\item Python's semantic
+			\item Type-checking
 			\item Python Type checking
-			\item \begin{itemize}
+			 \begin{itemize}
 					\item Dynamic typing
 					\item Strong typing
 					\item Annotations
@@ -66,6 +67,7 @@
 				  	\item Dependency injection
 				  	\item Adding method to a class
 				  \end{itemize}
+			\item Conclusion
 		\end{enumerate}
 	\end{frame}
 
@@ -77,6 +79,11 @@
 			\item \textbf{Procedural programming};
 			\item \textbf{Objected oriented}.
 		\end{itemize}
+		\begin{figure}[]
+			\centering
+			\includegraphics[scale=0.3]{img/python.png}
+			\label{Interfacce di un CS}
+		\end{figure}
 	\end{frame}
 
 	\begin{frame}
@@ -88,14 +95,14 @@
 			\end{enumerate}
 			\textbf{Python}:		
 			\begin{itemize}
-				\item implements \textbf{strict semantic};
+				\item implements \textbf{strict evaluation};
 				\item uses \textbf{whitespace indentation}, rather than curly brackets or keywords, to delimit blocks.
 			\end{itemize}
 	\end{frame}
 
 	\begin{frame}[fragile]
-		\frametitle{Semantic: Python vs Haskell}
-		In Python we never get \textit{true} beacause  it forces the evaluation of the function wich contains an infinite loop in the body:
+		\frametitle{Strict semantic: example}
+		In Python we never get \textit{true} because  it force the evaluation of the function wich contains an infinite loop in the body:
 		\begin{lstlisting}
 			def infiniteLoop(x):
 			    while True:
@@ -110,49 +117,81 @@
 		\end{lstlisting}
 	\end{frame}
 
-%	\begin{frame}
-%		\frametitle{Type checker (1)}
-%			\textbf{Type checking} is the process of verifying and enforces the typing rules of a language.
-%		\begin{enumerate}
-%			\item \textbf{Dynamic vs. Static}
-%			\item \textbf{Weak vs. Strong}.
-%		\end{enumerate}
-		
-%	\end{frame}
+	\begin{frame}
+		\frametitle{Type-checking }
+			\textbf{Type checking} is the process of verifying and enforces the typing rules of a language.
+		\begin{enumerate}
+			\item \textbf{Dynamic vs. Static}
+			\item \textbf{Weak vs. Strong}.
+		\end{enumerate}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[scale=0.14]{img/classification.png}
+		\end{figure}
+	\end{frame}
 
 	\begin{frame}
-		\frametitle{Type checking  }
-		\begin{enumerate}
-			\item \textbf{Dynamic vs. Static}\begin{itemize}
-				\item \textbf{Statically-typed languages}: typechecking is done at
-				compile-time, in order to guarantee the absence of run-time (type) errors:
-				formal proof of type-safety.
-				\item \textbf{Dynamically-typed languages:} dynamic
-				type checking is the process of verifying type constraints at runtime,
-				during execution.
+		\frametitle{Type-checking: static  }
+		\textbf{Statically-typed languages}: type-checking is done at
+		compile time, in order to guarantee the absence of run-time errors.
+		\begin{itemize}
+			\item \textbf{Advantages}:\begin{itemize}
+				\item There is a formal proof of \textbf{type-safety};
+				\item A large class of errors are caught earlier;
+				\item Types guide code development;
+				\item Types could be seen as documentation for the code.
 			\end{itemize}
-			\item \textbf{Weak vs. Strong}\begin{itemize}
-				\item Every sub expression is well typed
-				\item 
+			\item \textbf{Disadvantages}: 
+			\begin{itemize}
+				\item Static typing is a constraint on the program structure;
+				\item More code.
 			\end{itemize}
-		\end{enumerate}
+		
+		\end{itemize}
 	\end{frame}
+
+\begin{frame}
+	\frametitle{Type-checking: dynamic}
+	\textbf{Dynamically-typed languages:} dynamic
+	type checking is the process of verifying type constraints at runtime,
+	during execution.
+	\begin{itemize}
+		\item \textbf{Advantages}:
+		\begin{itemize}
+			\item These languages are more flexible;
+			\item less code.
+		\end{itemize}
+		\item \textbf{Disadvantages}:
+		\begin{itemize}
+			\item Programs can fail at runtime due to type errors.
+			\item It forces runtime checks to occur for every execution of the program, at any step of evaluation. The result is \textbf{less optimized} code.
+		\end{itemize}
+	\end{itemize}
+ \end{frame}
+
+\begin{frame}
+	\frametitle{Type-checking: strong and weak}
+	\begin{enumerate}
+		\item \textbf{Strongly typed}: every expression is well typed;
+			\begin{itemize}
+				\item \textbf{Advantages}: 
+			\end{itemize}
+	\end{enumerate}
+	
+\end{frame}
 
 	\begin{frame}
 		\frametitle{Python's type checking}
 			\begin{enumerate}
 				\item Python is \textbf{dynamic}: 
 				\begin{itemize}
-					\item objects have a type but it is determined at runtime;
+					\item Variables have no type, only the object that a variable references has a type. \textbf{Variables are simply names pointing to objects};
 					\item variables are not explicitly typed;
-					\item an assignement binds a name to an object and the object could be of any type;
+					\item objects have a type but it is determined at runtime;
 				\end{itemize}
 				\item Python is also \textbf{strongly typed}.
 			\end{enumerate}
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[scale=0.14]{img/classification.png}
-			\end{figure}
+			
 			Let's see the implications by some example.
 	\end{frame}
 
@@ -168,7 +207,9 @@
 			
 			If we try to execute \textbf{separately} the first branch, the type check raise a type error:
 			
-			\begin{lstlisting}
+			\begin{lstlisting}[keywordstyle=\color{black},
+			commentstyle=\color{black},
+			stringstyle=\color{black}.]
 			TypeError: unsupported operand type(s) for +: 'int' and 'str'
 			\end{lstlisting}
 	\end{frame}
@@ -201,40 +242,40 @@
 	The output will be "ten10".
 	\end{frame}
 
-	\begin{frame}[fragile]
-		\frametitle{Some exceptions (1)}
-		There are some operations allowed even in case of type incongruence.\\
-		The\textbf{ boolean equivalence} is permitted in Python 2 and 3: 
-		
-		\begin{lstlisting}
-			print("10" == 10)
-			print("10" != 10)
-		\end{lstlisting}
-		Returning:
-		\begin{lstlisting}
-			False
-			True
-		\end{lstlisting}
-	\end{frame}
+%\begin{frame}[fragile]
+%		\frametitle{Some exceptions (1)}
+%		There are some operations allowed even in case of type incongruence.\\
+%		The\textbf{ boolean equivalence} is permitted in Python 2 and 3: 
+%		
+%		\begin{lstlisting}
+%			print("10" == 10)
+%			print("10" != 10)
+%		\end{lstlisting}
+%		Returning:
+%		\begin{lstlisting}
+%			False
+%			True
+%		\end{lstlisting}
+%	\end{frame}
 
-	\begin{frame}[fragile]
-		\frametitle{Some exceptions (2)}
-		In Python 2 "\textit{grather than}" and \textit{"less than"} are permitted:
+%	\begin{frame}[fragile]
+%		\frametitle{Some exceptions (2)}
+%		In Python 2 "\textit{grather than}" and \textit{"less than"} are permitted:
+%		
+%		\begin{lstlisting}
+%		print("10">10)
+%		print("10"<10)
+%		\end{lstlisting}
+%		
+%		Returning:
 		
-		\begin{lstlisting}
-		print("10">10)
-		print("10"<10)
-		\end{lstlisting}
-		
-		Returning:
-		
-		\begin{lstlisting}
-		True
-		False
-		\end{lstlisting}
-		
-		Python 3 do not allowed to do "\textit{grather than}" and \textit{"less than"} controls like these.\\	
-	\end{frame}
+%		\begin{lstlisting}
+%		True
+%		False
+%		\end{lstlisting}
+%		
+%		Python 3 do not allowed to do "\textit{grather than}" and \textit{"less than"} controls like these.\\	
+%	\end{frame}
 
 	\begin{frame}[fragile]
 		\frametitle{Annotations}
@@ -297,16 +338,16 @@
 			\item The \textbf{\textit{self}} world is the equivalent of \textbf{\textit{this}} in \textbf{Java}. However Java do not requires to pass \textit{this} explicitly as a first parameter of a method: it could be used straight in the body of the method.
 			\item However self\textbf{ is not a reserved keyword} in Python, is just a strong convention.
 		\end{itemize}
-		\begin{lstlisting}[basicstyle=\fontsize{2}{4}\selectfont\ttfamily\tiny]
-		class Duck():
-			def __init__(myself, name, colour):
-				myself.name = name
-				myself.colour = colour
-			def quack(myself):
-				return "Quaaack"	
-			def fly(myself):
-				return "The duck is flying"
-		\end{lstlisting}
+	%	\begin{lstlisting}[basicstyle=\fontsize{2}{4}\selectfont\ttfamily\tiny]
+	%	class Duck():
+	%		def __init__(myself, name, colour):
+	%			myself.name = name
+	%			myself.colour = colour
+	%		def quack(myself):
+	%			return "Quaaack"	
+	%		def fly(myself):
+	%			return "The duck is flying"
+	%	\end{lstlisting}
 	\end{frame}
 
 	\begin{frame}[fragile]
@@ -341,23 +382,28 @@
 
 	\begin{frame}
 		\frametitle{Duck typing: main idea}
+		\textbf{Duck typing} is a concept related to dynamic typing in an object oriented language:
 		\begin{itemize}
-			\item 	Duck typing is a concept related to dynamic typing in an object oriented language. 
-			\item Is a feature in which the semantics of a class is determined by its ability to respond to some message (method or property) rather than being the extension of a class or an implementation of an interface. \\
+			\item Using duck typing you do not check types at all. Instead you check for the presence of a given method or attribute.
 			\item \textbf{The idea is that it doesn't actually matter what type my data is - just whether or not i can do what i want with it.}
 		\end{itemize}
 	\end{frame}
 
 	\begin{frame}[fragile]
 		\frametitle{Duck typing: example (1)}
-		\begin{lstlisting}[basicstyle=\fontsize{2}{4}\selectfont\ttfamily\tiny]
-		class Duck():
+		%basicstyle=\fontsize{2}{4}\selectfont\ttfamily\tiny
+		%class Bird():
+		%def fly():
+		%pass
+		\begin{lstlisting}[]
+		
+		class Duck(Bird):
 			def quack(self):
 				return "Quaaack"
 			def fly(self):
 				return "The duck is flying"
 		
-		class Parrot():
+		class Parrot(Bird):
 			def quack(self):
 				return "The parrot parrots a quack"
 			def fly(self):
@@ -367,27 +413,47 @@
 			def quack(self):
 				return "The man parrots a quack too"
 
-		v = [Duck(), Parrot(), Man()]
-		
-		for i in v:
-			print(i.quack())
 		\end{lstlisting}
 	\end{frame}
 
 	\begin{frame}[fragile]
 		\frametitle{Duck typing: example (2)}
 		\begin{lstlisting}	
-			for i in v:
-				print(i.fly())
+		v = [Duck(), Parrot(), Man()]
+		
+		for i in v:
+			print(i.quack())
+		\end{lstlisting}
+		Even if the istance of Man is not a subtype of the Bird class the type-checker do not raise any type error. The output would be:
+		
+		\begin{lstlisting}[keywordstyle=\color{black},
+		commentstyle=\color{black},
+		stringstyle=\color{black}.]	
+		Quaaack
+		The parrot parrots a quack
+		The man parrots a quack too
 		\end{lstlisting}
 		
-		If we try to use the \textit{fly()} method  over the entire collection of objects an error is raised at runtime:
 		
-		\begin{lstlisting}
-  Traceback (most recent call last):
-  File "/home/tommaso/git/ducktyping-tpl/code/ducklist.py", line 23, in <module>
-  print(i.fly())
-  AttributeError: Man instance has no attribute 'fly'
+		
+	\end{frame}
+
+	\begin{frame}[fragile]
+		\frametitle{Duck typing: example (3)}
+		\begin{lstlisting}	
+		for i in v:
+			print(i.fly())
+		\end{lstlisting}
+		If we try to use the \textit{fly()} method  over the entire collection of objects an error is raised at runtime:
+			\begin{lstlisting}[keywordstyle=\color{black},
+		commentstyle=\color{black},
+	stringstyle=\color{black}.]	
+	The duck is flying
+	The parrot is flying
+	Traceback (most recent call last):
+	File "/home/tommaso/git/ducktyping-tpl/code/ducklist.py", 
+	line 23, in <module> print(i.fly())
+	AttributeError: Man instance has no attribute 'fly'
 		\end{lstlisting}
 	\end{frame}
 
@@ -403,14 +469,14 @@
 		
 		\begin{itemize}
 			\item This is a classical example of \textbf{dependency injection};
-			\item Note that my Car does not depends on any concrete implementation of engine: Just using a dependency injected instance of something that responds to a \textit{turn\_on} message;
-			\item I could say my class Car depends on an interface. But I did not have to declare it. \textbf{It is an "automatic interface".}\\
+			\item Note that my Car does not depends on any concrete implementation of engine: i'm just using a dependency injected instance of something that responds to a \textit{turn\_on} message;
+			\item I could say my class Car depends on an interface. But I did not have to declare it. %\textbf{It is an "automatic interface".}\\
 		\end{itemize}	
 	\end{frame}
 
 	\begin{frame}[fragile]
 		\frametitle{Duck typing: dependency injection (2)}
-		In a language \textbf{without} duck typing is necessary to declare an explicit interface (\textit{IEngine}), its implementation (\textit{EngineV8}) and explicit define my Car parameter to be an implementation of \textit{IEngine}.	
+		In a language \textbf{without} duck typing, like Java, is necessary to declare an explicit interface (\textit{IEngine}), its implementation (\textit{EngineV8}) and explicit define my Car parameter to be an implementation of \textit{IEngine}.	
 		
 		\begin{lstlisting}[basicstyle=\fontsize{2}{4}\selectfont\ttfamily\tiny]
 		interface IEngine {
@@ -434,18 +500,21 @@
 
 	\begin{frame}[fragile]
 		\frametitle{Add method to a class}
-			In Python, due to the duck typing, there is the chance to add methods to the classes. 
+			In Python there is a difference between:
 		\begin{itemize}
 			\item \textbf{Function};
 			\item \textbf{Bound method}.
 		\end{itemize}
-	
+		
+		
 		\begin{lstlisting}
 		>>> def foo():
 		...     print "foo"
+		...
 		>>> class A:
 		...     def bar( self ):
 		...         print "bar"
+		...
 		>>> a = A()
 		>>> foo
 		
@@ -453,17 +522,33 @@
 		>>> a.bar
 		<bound method A.bar of <__main__.A instance at 0x00A9BC88>>
 		\end{lstlisting}
-	\end{frame}
-
-	\begin{frame}[fragile]
-		\frametitle{Add method to a class: example}
-		\begin{lstlisting}
-		donald = Duck()
-		charlie = Parrot()
-		john = Man("John")
-		jack = Man("Jack")
-		v = [donald, charlie, john, jack]
 		
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Add method to a class: example (1)}
+		However is possible to poke a function into a class:
+		\begin{lstlisting}	
+			class Man():
+				def __init__(self, name):
+					self.name = name
+				def quack(self):
+					return "The man parrots a quack too"
+			
+			donald = Duck()
+			charlie = Parrot()
+			john = Man("John")
+			jack = Man("Jack")
+			
+			v = [donald, charlie, john, jack]
+					
+			
+		\end{lstlisting}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Add method to a class: example (2)}
+		\begin{lstlisting}
 		def fly(self):
 			return "Takes a plane"
 		
@@ -471,6 +556,15 @@
 		
 		for i in v:
 			print(i.fly())
+		\end{lstlisting}
+		Every istance of the Man class, even if previously instantiated, now has the fly method.
+		\begin{lstlisting}[basicstyle=\fontsize{2}{4}\selectfont\ttfamily\tiny,keywordstyle=\color{black},
+		commentstyle=\color{black},
+		stringstyle=\color{black}.]	
+			The duck is flying
+			The parrot is flying
+			John takes a plane
+			Jack takes a plane
 		\end{lstlisting}
 	\end{frame}
 
@@ -484,18 +578,19 @@
 			for i in v:
 				print(i.fly())
 				
-The duck is flying
-The parrot is flying
-Traceback (most recent call last):
-File "/home/tommaso/git/ducktyping-tpl/code/pokelist.py", line 33, in <module> print(i.fly())
-TypeError: fly() takes exactly 1 argument (0 given)
+   The duck is flying
+   The parrot is flying
+   Traceback (most recent call last):
+   File "/home/tommaso/git/ducktyping-tpl/code/pokelist.py", line 33, 
+   in <module> print(i.fly())
+   TypeError: fly() takes exactly 1 argument (0 given)
 			\end{lstlisting}
 	\end{frame}
 	
 	\begin{frame}[fragile]
 		\frametitle{Add method to a single instance of a class (2)}
 			
-		To bound the method properly to "john" we had to use the module \textit{types}:
+		To properly bound the method  to "john" we had to use the module \textit{types}:
 		
 		\begin{lstlisting}
 		import types
@@ -511,16 +606,24 @@ TypeError: fly() takes exactly 1 argument (0 given)
 		\frametitle{Add method to a single instance of a class (3)}
 			We still have an error but this time is caused by the istance "jack", proving that we added the method fly only to one istance of Man. 
 		
-		\begin{lstlisting}
-		The duck is flying
-		The parrot is flying
-		Takes a plane
-		Traceback (most recent call last):
-		File "/home/tommaso/git/ducktyping-tpl/code/pokelist.py", line 35, in <module>
-		print(i.fly())
-		AttributeError: Man instance has no attribute 'fly'
+		\begin{lstlisting}[keywordstyle=\color{black},
+		commentstyle=\color{black},
+		stringstyle=\color{black}.]
+	The duck is flying
+	The parrot is flying
+	John takes a plane
+	Jack takes a plane
+	Traceback (most recent call last):
+	File "/home/tommaso/git/ducktyping-tpl/code/pokelist.py",
+	line 35, in <module>
+	print(i.fly())
+	AttributeError: Man instance has no attribute 'fly'
 		\end{lstlisting}
 	\end{frame}
+
+\begin{frame}
+	\frametitle{Conclusion}
+\end{frame}
 
 	
 

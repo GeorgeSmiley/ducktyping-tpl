@@ -23,9 +23,9 @@ jack = Man("Jack")
 v = [donald, charlie, john, jack]
 
 def fly(self):
-	return "Takes a plane"
+	return self.name + " takes a plane"
 
-#Man.fly = fly
+Man.fly = fly
 
 import types
 
