@@ -64,7 +64,7 @@
 			\item Duck typing
 				  \begin{itemize}
 				  	\item Main idea
-				  	\item Dependency injection
+				  	\item Duck typing vs. Static typing
 				  	\item Adding method to a class
 				  \end{itemize}
 			\item Conclusion
@@ -101,7 +101,7 @@
 	\end{frame}
 
 	\begin{frame}[fragile]
-		\frametitle{Strict semantic: example}
+		\frametitle{Strict evaluation: example}
 		In Python we never get \textit{true} because  it force the evaluation of the function wich contains an infinite loop in the body:
 		\begin{lstlisting}
 			def infiniteLoop(x):
@@ -113,7 +113,7 @@
 		\end{lstlisting}
 		If we write the same code in \textbf{haskell} we get the \textit{true} value:
 		\begin{lstlisting}
-			elem 2 [2, 4, noreturn 5]
+			elem 5 [5, 10, noreturn 5]
 		\end{lstlisting}
 	\end{frame}
 
@@ -181,9 +181,9 @@
 \end{frame}
 
 	\begin{frame}
-		\frametitle{Python's type checking}
+		\frametitle{Python type-checking}
 			\begin{enumerate}
-				\item Python is \textbf{dynamic}: 
+				\item Python type-checking is \textbf{dynamic}: 
 				\begin{itemize}
 					\item Variables have no type, only the object that a variable references has a type. \textbf{Variables are simply names pointing to objects};
 					\item variables are not explicitly typed;
@@ -311,7 +311,7 @@
 	\end{frame}
 
 	\begin{frame}[fragile]
-		\frametitle{Object oriented (1)}
+		\frametitle{Object oriented}
 	\begin{lstlisting}
 		class Duck():
 			def __init__(self, name, colour):
@@ -332,10 +332,10 @@
 	\end{frame}
 
 	\begin{frame}[fragile]
-		\frametitle{Object oriented (2)}
+		\frametitle{Object oriented: self}
 		\begin{itemize}
 			\item The first argument of every class method is always a reference to the current instance of the class (\textit{\textbf{self}}).
-			\item The \textbf{\textit{self}} world is the equivalent of \textbf{\textit{this}} in \textbf{Java}. However Java do not requires to pass \textit{this} explicitly as a first parameter of a method: it could be used straight in the body of the method.
+			\item The \textbf{\textit{self}} world is the equivalent of \textbf{\textit{this}} in \textbf{Java}. However Java do not requires to pass \textit{this} explicitly as a first parameter of a method: it could be used straight in the body.
 			\item However self\textbf{ is not a reserved keyword} in Python, is just a strong convention.
 		\end{itemize}
 	%	\begin{lstlisting}[basicstyle=\fontsize{2}{4}\selectfont\ttfamily\tiny]
@@ -350,25 +350,54 @@
 	%	\end{lstlisting}
 	\end{frame}
 
+	%\begin{frame}[fragile]
+		%\frametitle{Object oriented (3)}
+		%In Python \textbf{is not possible to define multiple constructor} for a class, still is possible
+		%to define a default value if one is not passed.
+	%	
+	%	\begin{lstlisting}
+	%	class Parrot():
+	%		def __init__(self, name = "Perry"):
+	%			self.name = name
+	%	
+	%	bird1 = Parrot()
+	%	bird2 = Parrot("Jack")
+	%	
+	%	print(bird1.name)
+	%	print(bird2.name)	\end{lstlisting}
+	%	The output would be:\\
+	%	"Perry"\\
+	%	"Jack"
+	%\end{frame}
+	
 	\begin{frame}[fragile]
-		\frametitle{Object oriented (3)}
-		In Python \textbf{is not possible to define multiple constructor} for a class, still is possible to define a default value if one is not passed.
-		
-		\begin{lstlisting}
-		class Parrot():
-			def __init__(self, name = "Perry"):
-				self.name = name
-		
-		bird1 = Parrot()
-		bird2 = Parrot("Jack")
-		
-		print(bird1.name)
-		print(bird2.name)
+		\frametitle{Object oriented: inheritance and polymorphism}
+		\begin{lstlisting}[basicstyle=\fontsize{2}{4}\selectfont\ttfamily\tiny]
+	class Person():
+		def __init__(self, name, surname):
+			self.name = name
+			self.surname = surname
+		def get_info(self):
+			return self.name + " " + self. surname
+	
+	class Teacher(Person):
+		def __init__(self, name, surname):
+			Person.__init__(self, name, surname)
+		def get_info(self):
+			return self.name + " " + self. surname + " is a teacher"
+	
+	class Student(Person):
+		def __init__(self, name, surname, id):
+			Person.__init__(self, name, surname)
+			self.id = id
+		def get_info(self):
+			return self.name + " " + self. surname + " is a student"
+		def get_id(self):
+			return self.id
 		\end{lstlisting}
-		The output would be:\\
-		"Perry"\\
-		"Jack"
 	\end{frame}
+	
+	
 
 	\begin{frame}
 		\frametitle{Duck typing}
@@ -384,7 +413,7 @@
 		\frametitle{Duck typing: main idea}
 		\textbf{Duck typing} is a concept related to dynamic typing in an object oriented language:
 		\begin{itemize}
-			\item Using duck typing you do not check types at all. Instead you check for the presence of a given method or attribute.
+			\item Implementing duck typing you do not check types at all. Instead you check for the presence of a given method or attribute.
 			\item \textbf{The idea is that it doesn't actually matter what type my data is - just whether or not i can do what i want with it.}
 		\end{itemize}
 	\end{frame}
@@ -458,7 +487,7 @@
 	\end{frame}
 
 	\begin{frame}[fragile]
-		\frametitle{Duck typing: dependency injection (1)}
+		\frametitle{Duck typing vs Static typing (1)}
 		\begin{lstlisting}
 		class Car:
 			def __init__(self, engine):
@@ -473,15 +502,25 @@
 			\item I could say my class Car depends on an interface. But I did not have to declare it. %\textbf{It is an "automatic interface".}\\
 		\end{itemize}	
 	\end{frame}
-
-	\begin{frame}[fragile]
-		\frametitle{Duck typing: dependency injection (2)}
-		In a language \textbf{without} duck typing, like Java, is necessary to declare an explicit interface (\textit{IEngine}), its implementation (\textit{EngineV8}) and explicit define my Car parameter to be an implementation of \textit{IEngine}.	
+	
+	\begin{frame}
+		\frametitle{Duck typing vs Static typing (2)}
+		In statically-typed language, like Java, if we want to pass different implementation of Engine, to the contructor of the Car class we had to:
+		\begin{itemize}
+			\item declare explicit interface (\textit{IEngine for example});
+			\item declare its implementation (EngineV8 or ElectricEngine);
+			\item explicitly define my Car parameter to be an implementation of IEngine.
+		\end{itemize} 
 		
-		\begin{lstlisting}[basicstyle=\fontsize{2}{4}\selectfont\ttfamily\tiny]
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Duck typing vs Static typing (3)}	
+		\begin{lstlisting}
 		interface IEngine {
 			void turnOn();
 		}
+		
 		public class EngineV8 implements IEngine {
 			public void turnOn() {
 				// do something here
@@ -490,44 +529,44 @@
 		public class Car {
 			public Car(IEngine engine) {
 				this.engine = engine;
-		}}
-		
-		public void run() {
-			this.engine.turnOn();
-			}
+				}
+			public void run() {
+				this.engine.turnOn();
+				}
+		}
 		\end{lstlisting}
 	\end{frame}
 
-	\begin{frame}[fragile]
-		\frametitle{Add method to a class}
-			In Python there is a difference between:
-		\begin{itemize}
-			\item \textbf{Function};
-			\item \textbf{Bound method}.
-		\end{itemize}
+%	\begin{frame}[fragile]
+%		\frametitle{Add method to a class}
+	%		In Python there is a difference between:
+	%	\begin{itemize}
+	%		\item \textbf{Function};
+	%		\item \textbf{Bound method}.
+	%	\end{itemize}
 		
 		
-		\begin{lstlisting}
-		>>> def foo():
-		...     print "foo"
-		...
-		>>> class A:
-		...     def bar( self ):
-		...         print "bar"
-		...
-		>>> a = A()
-		>>> foo
+	%	\begin{lstlisting}
+	%	>>> def foo():
+	%	...     print "foo"
+	%	...
+	%	>>> class A:
+	%	...     def bar( self ):
+	%	...         print "bar"
+	%	...
+	%	>>> a = A()
+	%	>>> foo
+	%	
+	%	<function foo at 0x00A98D70>
+	%	>>> a.bar
+	%	<bound method A.bar of <__main__.A instance at 0x00A9BC88>>
+	%	\end{lstlisting}
 		
-		<function foo at 0x00A98D70>
-		>>> a.bar
-		<bound method A.bar of <__main__.A instance at 0x00A9BC88>>
-		\end{lstlisting}
-		
-	\end{frame}
+%	\end{frame}
 	
 	\begin{frame}[fragile]
 		\frametitle{Add method to a class: example (1)}
-		However is possible to poke a function into a class:
+		Due to the flexibility given by Duck typing is possible to poke a function into a class:
 		\begin{lstlisting}	
 			class Man():
 				def __init__(self, name):

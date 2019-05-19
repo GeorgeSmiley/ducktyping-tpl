@@ -18,7 +18,12 @@ class Man():
 	def quack(self):
 		return "The man parrots a quack too"
 
-v = [Duck(), Parrot(), Man()]
+d = Duck()
+p = Parrot()
+m = Man()
+v = [d, p, m]
+
+print(isinstance(d, Bird))
 
 for i in v:
 	print(i.quack())
