@@ -95,8 +95,7 @@
 			\end{enumerate}
 			\textbf{Python}:		
 			\begin{itemize}
-				\item implements \textbf{strict evaluation};
-				\item uses \textbf{whitespace indentation}, rather than curly brackets or keywords, to delimit blocks.
+				\item implements \textbf{strict evaluation}.
 			\end{itemize}
 	\end{frame}
 
@@ -132,13 +131,11 @@
 
 	\begin{frame}
 		\frametitle{Type-checking: static  }
-		\textbf{Statically-typed languages}: type-checking is done at
-		compile time, in order to guarantee the absence of run-time errors.
+		In \textbf{statically-typed languages} type-checking is done at compile time.
 		\begin{itemize}
 			\item \textbf{Advantages}:\begin{itemize}
-				\item There is a formal proof of \textbf{type-safety};
-				\item A large class of errors are caught earlier;
-				\item Types guide code development;
+				\item There is a formal proof of \textbf{type-safety} wich guarantee the absence of run-time errors.;
+				\item Static typing guide code development;
 				\item Types could be seen as documentation for the code.
 			\end{itemize}
 			\item \textbf{Disadvantages}: 
@@ -146,15 +143,13 @@
 				\item Static typing is a constraint on the program structure;
 				\item More code.
 			\end{itemize}
-		
 		\end{itemize}
 	\end{frame}
 
 \begin{frame}
 	\frametitle{Type-checking: dynamic}
-	\textbf{Dynamically-typed languages:} dynamic
-	type checking is the process of verifying type constraints at runtime,
-	during execution.
+	In reverse, in \textbf{dynamically-typed languages}
+	type checking take place at run-time, during the execution of the code.
 	\begin{itemize}
 		\item \textbf{Advantages}:
 		\begin{itemize}
@@ -185,9 +180,10 @@
 			\begin{enumerate}
 				\item Python type-checking is \textbf{dynamic}: 
 				\begin{itemize}
-					\item Variables have no type, only the object that a variable references has a type. \textbf{Variables are simply names pointing to objects};
-					\item variables are not explicitly typed;
+					\item \textbf{Variables are simply names pointing to objects}, only the object that a variable references has a type;
 					\item objects have a type but it is determined at runtime;
+					\item variables are not explicitly typed;
+					
 				\end{itemize}
 				\item Python is also \textbf{strongly typed}.
 			\end{enumerate}
@@ -370,32 +366,31 @@
 	%	"Jack"
 	%\end{frame}
 	
-	\begin{frame}[fragile]
-		\frametitle{Object oriented: inheritance and polymorphism}
-		\begin{lstlisting}[basicstyle=\fontsize{2}{4}\selectfont\ttfamily\tiny]
-	class Person():
-		def __init__(self, name, surname):
-			self.name = name
-			self.surname = surname
-		def get_info(self):
-			return self.name + " " + self. surname
+%	\begin{frame}[fragile]
+%		\frametitle{Object oriented: inheritance and polymorphism}
+%		\begin{lstlisting}[basicstyle=\fontsize{2}{4}\selectfont\ttfamily\tiny]
+%	class Person():
+%		def __init__(self, name, surname):
+%			self.name = name
+%%		def get_info(self):
+%			return self.name + " " + self. surname
+%	
+%	class Teacher(Person):
+%		def __init__(self, name, surname):
+%			Person.__init__(self, name, surname)
+%		def get_info(self):
+%			return self.name + " " + self. surname + " is a teacher"
 	
-	class Teacher(Person):
-		def __init__(self, name, surname):
-			Person.__init__(self, name, surname)
-		def get_info(self):
-			return self.name + " " + self. surname + " is a teacher"
-	
-	class Student(Person):
-		def __init__(self, name, surname, id):
-			Person.__init__(self, name, surname)
-			self.id = id
-		def get_info(self):
-			return self.name + " " + self. surname + " is a student"
-		def get_id(self):
-			return self.id
-		\end{lstlisting}
-	\end{frame}
+%	class Student(Person):
+%		def __init__(self, name, surname, id):
+%			Person.__init__(self, name, surname)
+%			self.id = id
+%		def get_info(self):
+%			return self.name + " " + self. surname + " is a student"
+%		def get_id(self):
+%			return self.id
+%		\end{lstlisting}
+%	\end{frame}
 	
 	
 
