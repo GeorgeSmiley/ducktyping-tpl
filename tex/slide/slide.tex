@@ -48,28 +48,25 @@
 		\end{figure}
 	\end{frame}
 
-	\begin{frame}
-		\frametitle{Index}
-		\begin{enumerate}
-			\item Introduction
-			\item Python's semantic
-			\item Type-checking
-			\item Python Type checking
-			 \begin{itemize}
-					\item Dynamic typing
-					\item Strong typing
-					\item Annotations
-				  \end{itemize}
-			\item Object oriented
-			\item Duck typing
-				  \begin{itemize}
-				  	\item Main idea
-				  	\item Duck typing vs. Static typing
-				  	\item Adding method to a class
-				  \end{itemize}
-			\item Conclusion
-		\end{enumerate}
-	\end{frame}
+%	\begin{frame}
+%		\frametitle{Index}
+%		\begin{enumerate}
+%			\item Introduction
+%			\item Python's semantic
+%			\item Type-checking
+%			 \begin{itemize}
+%					\item Dynamic typing
+%					\item Strong typing
+%					\item Annotations
+%				  \end{itemize}
+%			\item Object oriented
+%			\item Duck typing
+%				  	\item Main idea
+%				  	\item Duck typing vs. Static typing
+%				  \end{itemize}
+%			\item Conclusion
+%		\end{enumerate}
+%	\end{frame}
 
 	\begin{frame}
 		\frametitle{Introduction}
@@ -87,7 +84,7 @@
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Python's semantic}
+		\frametitle{Python's evaluation strategy}
 			Could be useful to first recall the difference between \textit{\textbf{strict}} and \textit{\textbf{lazy}} evaluation:
 			\begin{enumerate}
 				\item \textbf{Strict evaluation strategy}: the arguments of a function are fully evaluated to values before evaluating the function call (call by value);
@@ -167,10 +164,8 @@
 \begin{frame}
 	\frametitle{Type-checking: strong and weak}
 	\begin{enumerate}
-		\item \textbf{Strongly typed}: every expression is well typed;
-			\begin{itemize}
-				\item \textbf{Advantages}: 
-			\end{itemize}
+		\item \textbf{Strongly typed}: every expression must be well typed, wich means that only operations appropriate to that type are allowed;
+		\item \textbf{Weakly typed}:
 	\end{enumerate}
 	
 \end{frame}
@@ -560,45 +555,70 @@
 %	\end{frame}
 	
 	\begin{frame}[fragile]
+		\frametitle{Add method to a class}
+		\begin{itemize}
+			\item Due to the flexibility given by Duck typing is possible to add a function to a class, \textbf{at run-time}.
+			\item In a \textbf{statically-typed} languages this behaviour is \textbf{not possible: }once a class is loaded by the classloader there's no way to modify the code.
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}[fragile]
 		\frametitle{Add method to a class: example (1)}
-		Due to the flexibility given by Duck typing is possible to poke a function into a class:
 		\begin{lstlisting}	
-			class Man():
-				def __init__(self, name):
-					self.name = name
-				def quack(self):
-					return "The man parrots a quack too"
-			
-			donald = Duck()
-			charlie = Parrot()
-			john = Man("John")
-			jack = Man("Jack")
-			
-			v = [donald, charlie, john, jack]
-					
-			
+		class Duck(Bird):
+			def quack(self):
+				return "Quaaack"
+			def fly(self):
+				return "The duck is flying"
+		
+		class Parrot(Bird):
+			def quack(self):
+				return "The parrot parrots a quack"
+			def fly(self):
+				return "The parrot is flying"
+				
+		class Man():
+			def __init__(self, name):
+				self.name = name
+			def quack(self):
+				return "The man parrots a quack too"
 		\end{lstlisting}
+		
 	\end{frame}
 	
 	\begin{frame}[fragile]
 		\frametitle{Add method to a class: example (2)}
 		\begin{lstlisting}
+		donald = Duck()
+		charlie = Parrot()
+		john = Man("John")
+		jack = Man("Jack")
+		
+		v = [donald, charlie, john, jack]
+		
 		def fly(self):
 			return "Takes a plane"
 		
 		Man.fly = fly
 		
-		for i in v:
-			print(i.fly())
+		
+		\end{lstlisting}
+	\end{frame}
+
+	\begin{frame}[fragile]
+		\frametitle{Add method to a class: example (3)}
+		\begin{lstlisting}
+			for i in v:
+				print(i.fly())
 		\end{lstlisting}
 		Every istance of the Man class, even if previously instantiated, now has the fly method.
-		\begin{lstlisting}[basicstyle=\fontsize{2}{4}\selectfont\ttfamily\tiny,keywordstyle=\color{black},
+		\begin{lstlisting}[keywordstyle=\color{black},
 		commentstyle=\color{black},
 		stringstyle=\color{black}.]	
-			The duck is flying
-			The parrot is flying
-			John takes a plane
-			Jack takes a plane
+		The duck is flying
+		The parrot is flying
+		John takes a plane
+		Jack takes a plane
 		\end{lstlisting}
 	\end{frame}
 
@@ -624,7 +644,7 @@
 	\begin{frame}[fragile]
 		\frametitle{Add method to a single instance of a class (2)}
 			
-		To properly bound the method  to "john" we had to use the module \textit{types}:
+		To properly bound the method only to "john" istance we had to use the module \textit{types}:
 		
 		\begin{lstlisting}
 		import types
@@ -657,7 +677,14 @@
 
 \begin{frame}
 	\frametitle{Conclusion}
+	Duck typing is a handy way to have a \textbf{polymorphic} code without relying on abstract classes/interfaces:
+	\begin{itemize}
+		\item a statement calling a method on an object does not rely on the declared type of the object (at compile time)
+		\item The object simply must supply an implementation of the method called, when called, at run-time. 
+	\end{itemize}
 \end{frame}
+
+
 
 	
 
