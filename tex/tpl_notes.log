@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.12.9)  18 MAY 2019 09:47
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.12.9)  20 MAY 2019 15:48
  restricted system commands enabled.
 **tpl_notes.tex
 (./tpl_notes.tex
@@ -605,7 +605,7 @@ exmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/l
 mr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fon
 ts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb
 >
-Output written on tpl_notes.pdf (19 pages, 375387 bytes).
+Output written on tpl_notes.pdf (19 pages, 375386 bytes).
 
 PDF statistics: 497 PDF objects out of 1000 (max. 8388607)
  460 compressed objects within 5 object streams

@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.12.9)  20 MAY 2019 11:34
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.12.9)  21 MAY 2019 08:45
  restricted system commands enabled.
 **slide.tex
 (./slide.tex
@@ -1482,7 +1482,7 @@ texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/txfonts/tcxtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/u
 hvr8a.pfb>
-Output written on slide.pdf (32 pages, 298640 bytes).
+Output written on slide.pdf (32 pages, 298645 bytes).
 
 PDF statistics: 935 PDF objects out of 1000 (max. 8388607)
  871 compressed objects within 9 object streams
