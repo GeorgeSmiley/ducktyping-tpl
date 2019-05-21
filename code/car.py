@@ -14,6 +14,7 @@ class EngineV8:
 electric = ElectricEngine()
 fueled = EngineV8()
 
-car = Car(fueled)
-
-print(car.run())
+car1 = Car(fueled)
+car2 = Car(electric)
+print(car1.run())
+print(car2.run())

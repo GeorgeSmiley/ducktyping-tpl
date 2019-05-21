@@ -72,7 +72,7 @@
 		\frametitle{Introduction}
 		Python is an \textit{\textbf{interpreted}}, \textit{\textbf{multi-paradigm}} language. It was initially designed by Guido van Rossum in 1991 and developed by Python Software Foundation. It supports:
 		\begin{itemize}
-			\item \textbf{Functional programming } (non pure);
+			\item \textbf{Functional programming };
 			\item \textbf{Procedural programming};
 			\item \textbf{Objected oriented}.
 		\end{itemize}
@@ -109,7 +109,7 @@
 		\end{lstlisting}
 		If we write the same code in \textbf{haskell} we get the \textit{true} value:
 		\begin{lstlisting}
-			elem 5 [5, 10, noreturn 5]
+			elem 5 [5, 10, infiniteLoop 5]
 		\end{lstlisting}
 	\end{frame}
 
@@ -164,7 +164,7 @@
 \begin{frame}
 	\frametitle{Type-checking: strong and weak}
 	\begin{enumerate}
-		\item \textbf{Strongly typed}: every expression must be well typed, wich means that only operations appropriate to that type are allowed;
+		\item In a \textbf{strongly typed}: every expression must be well typed, wich means that only operations appropriate for that type are allowed;
 		\item \textbf{Weakly typed}:
 	\end{enumerate}
 	
@@ -207,7 +207,7 @@
 
 	\begin{frame}[fragile]
 		\frametitle{Python's dynamic typing example (2)}
-		Another consequnce is that programmers are \textbf{free to bind the same names (variables) to different objects with a different type}. Then the following statements are perfectly legal:
+		Another consequnce is that programmers are \textbf{free to bind the same names (variables) to different objects, having  different types}. Then the following statements are perfectly legal:
 		
 		\begin{lstlisting}
 		variable = 10
@@ -221,7 +221,7 @@
 		\frametitle{Python's strong typing example}
 		Python is not allowed to perform operations inappropriate to the type of the object: 
 		\begin{lstlisting}
-		print(10+"ten")
+		print(10 + "ten")
 		\end{lstlisting}
 		
 		In a \textbf{weakly-typed} language, like PHP, the integer is forced to be a string and no type error is raised:
@@ -281,7 +281,7 @@
 					return 2 * math.pi * radius
 			\end{lstlisting}
 			
-			Type hints and annotations \textbf{\textit{do not add a real static typechecking}} in native Python so this should not effect the code performance.\\
+			Type hints and annotations \textbf{\textit{do not add a real static typechecking}} in native Python, so they do not effect the code performance.\\
 	\end{frame}
 
 	\begin{frame}
@@ -404,7 +404,7 @@
 		\textbf{Duck typing} is a concept related to dynamic typing in an object oriented language:
 		\begin{itemize}
 			\item Implementing duck typing the type of an object is not checked at runtime. Instead the type checker looks for the presence of a given method or attribute.
-			\item \textbf{The idea is that it doesn't actually matter what type my data is - just if  can what do i want from it.}
+			\item \textbf{The idea is that it doesn't actually matter what type my data is - just if i can do with it what i want.}
 		\end{itemize}
 	\end{frame}
 
@@ -482,7 +482,7 @@
 		class Car:
 			def __init__(self, engine):
 				self.engine = engine
-			def run():
+			def run(self):
 				self.engine.turn_on()			
 		\end{lstlisting}
 		
@@ -495,9 +495,9 @@
 	
 	\begin{frame}
 		\frametitle{Duck typing vs Static typing (2)}
-		In statically-typed language, like Java, if we want to pass different implementation of Engine, to the contructor of the Car class we had to:
+		In statically-typed language, like Java, if we want to pass different objects to the Car contructor, they has to be \textbf{different implementation of a common interface}:
 		\begin{itemize}
-			\item declare explicit interface (\textit{IEngine for example});
+			\item we had to declare explicit an interface (\textit{IEngine for example});
 			\item declare its implementation (EngineV8 or ElectricEngine);
 			\item explicitly define my Car parameter to be an implementation of IEngine.
 		\end{itemize} 
@@ -666,7 +666,6 @@
 	The duck is flying
 	The parrot is flying
 	John takes a plane
-	Jack takes a plane
 	Traceback (most recent call last):
 	File "/home/tommaso/git/ducktyping-tpl/code/pokelist.py",
 	line 35, in <module>
@@ -681,6 +680,8 @@
 	\begin{itemize}
 		\item a statement calling a method on an object does not rely on the declared type of the object (at compile time)
 		\item The object simply must supply an implementation of the method called, when called, at run-time. 
+		\item It gives flexibility to the language.
+		\item 
 	\end{itemize}
 \end{frame}
 

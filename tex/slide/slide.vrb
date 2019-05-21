@@ -7,7 +7,6 @@
 	The duck is flying
 	The parrot is flying
 	John takes a plane
-	Jack takes a plane
 	Traceback (most recent call last):
 	File "/home/tommaso/git/ducktyping-tpl/code/pokelist.py",
 	line 35, in <module>
