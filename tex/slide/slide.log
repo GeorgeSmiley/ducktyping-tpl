@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.12.9)  21 MAY 2019 11:59
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.12.9)  21 MAY 2019 16:18
  restricted system commands enabled.
 **slide.tex
 (./slide.tex
@@ -1399,6 +1399,9 @@ Overfull \vbox (1.32141pt too high) detected at line 436
 ]
 \openout4 = slide.vrb
  (./slide.vrb)
+Overfull \vbox (20.32138pt too high) detected at line 518
+ []
+
 [23
 
 ] [24
@@ -1406,7 +1409,7 @@ Overfull \vbox (1.32141pt too high) detected at line 436
 ]
 \openout4 = slide.vrb
  (./slide.vrb)
-Overfull \vbox (10.8214pt too high) detected at line 549
+Overfull \vbox (10.8214pt too high) detected at line 552
  []
 
 [25
@@ -1418,7 +1421,7 @@ Overfull \vbox (10.8214pt too high) detected at line 549
 ]
 \openout4 = slide.vrb
  (./slide.vrb)
-Overfull \vbox (10.8214pt too high) detected at line 608
+Overfull \vbox (10.8214pt too high) detected at line 611
  []
 
 [27
@@ -1469,11 +1472,11 @@ warning  (pdf backend): ignoring duplicate destination with the name 'Interfacce
 \tf@snm=\write8
 
 \openout8 = slide.snm
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 737.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 737.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 740.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 740.
  (./slide.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 737.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 737.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 740.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 740.
 Package rerunfilecheck Info: File `slide.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1483,15 +1486,15 @@ LaTeX Warning: There were multiply-defined labels.
 )
 
 Here is how much of LuaTeX's memory you used:
- 25925 strings out of 494480
+ 25929 strings out of 494480
  100000,662416 words of node,token memory allocated
  1534 words of node memory still in use:
    45 hlist, 12 vlist, 5 rule, 6 local_par, 48 glue, 7 kern, 21 penalty, 67 glue
 _spec, 5 write, 22 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save, 1 pdf_restore no
 des
-   avail lists: 1:4,2:27,3:205,4:1110,5:653,6:1231,7:1485,8:494,9:1478,10:16,11:
+   avail lists: 1:4,2:27,3:205,4:1110,5:656,6:1231,7:1485,8:494,9:1478,10:16,11:
 161
- 28509 multiletter control sequences out of 65536+600000
+ 28513 multiletter control sequences out of 65536+600000
  56 fonts using 2326643 bytes
  55i,15n,57p,798b,1249s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/t
@@ -1500,7 +1503,7 @@ texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/txfonts/tcxtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/u
 hvr8a.pfb>
-Output written on slide.pdf (34 pages, 375844 bytes).
+Output written on slide.pdf (34 pages, 375969 bytes).
 
 PDF statistics: 991 PDF objects out of 1000 (max. 8388607)
  923 compressed objects within 10 object streams
