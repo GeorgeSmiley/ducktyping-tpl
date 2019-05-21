@@ -48,25 +48,27 @@
 		\end{figure}
 	\end{frame}
 
-%	\begin{frame}
-%		\frametitle{Index}
-%		\begin{enumerate}
-%			\item Introduction
-%			\item Python's semantic
-%			\item Type-checking
-%			 \begin{itemize}
-%					\item Dynamic typing
-%					\item Strong typing
-%					\item Annotations
-%				  \end{itemize}
-%			\item Object oriented
-%			\item Duck typing
-%				  	\item Main idea
-%				  	\item Duck typing vs. Static typing
-%				  \end{itemize}
-%			\item Conclusion
-%		\end{enumerate}
-%	\end{frame}
+	\begin{frame}
+		\frametitle{Index}
+		\begin{enumerate}
+			\item Introduction
+			\item Python evaluation strategy
+			\item Type-checking
+			\item Python type-checking
+			 \begin{itemize}
+					\item Dynamic typing
+					\item Strong typing
+					\item Annotations
+				  \end{itemize}
+			\item Object oriented
+			\item Duck typing
+				\begin{itemize}
+				  	\item Main idea
+				  	\item Duck typing vs. Static typing
+				  \end{itemize}
+			\item Conclusion
+		\end{enumerate}
+	\end{frame}
 
 	\begin{frame}
 		\frametitle{Introduction}
@@ -156,7 +158,7 @@
 		\item \textbf{Disadvantages}:
 		\begin{itemize}
 			\item Programs can fail at runtime due to type errors.
-			\item It forces runtime checks to occur for every execution of the program, at any step of evaluation. The result is \textbf{less optimized} code.
+			\item It forces runtime checks to occur for every execution of the program. The result is \textbf{less optimized} code.
 		\end{itemize}
 	\end{itemize}
  \end{frame}
@@ -164,8 +166,8 @@
 \begin{frame}
 	\frametitle{Type-checking: strong and weak}
 	\begin{enumerate}
-		\item In a \textbf{strongly typed}: every sub-expression must be well typed, wich means that only operations appropriate for that type are allowed;
-		\item \textbf{Weakly typed}:
+		\item In a \textbf{strongly typed} language every sub-term must be well typed, wich means that the language  enforces strict restrictions on mixing of values with differing data types in an expression.
+		\item In a \textbf{Weakly typed} language there are no such restriction.
 	\end{enumerate}
 	
 \end{frame}
@@ -712,7 +714,7 @@
 \begin{frame}[fragile]
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[scale=1.5]{img/doctor.jpg}
+		\includegraphics[scale=0.4]{img/doctor.jpg}
 		\label{Interfacce di un CS}
 	\end{figure}
 \end{frame}

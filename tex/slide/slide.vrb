@@ -1,5 +1,5 @@
 \begin{figure}[h!]
 		\centering
-		\includegraphics[scale=1.5]{img/doctor.jpg}
+		\includegraphics[scale=0.4]{img/doctor.jpg}
 		\label{Interfacce di un CS}
 	\end{figure}
