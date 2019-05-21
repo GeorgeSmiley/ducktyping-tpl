@@ -394,7 +394,7 @@
 		\textit{ If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck.}\\
 		\begin{figure}[h!]
 			\centering
-			\includegraphics[scale=0.85]{img/duck.png}
+			\includegraphics[scale=0.75]{img/duck.png}
 			\label{Interfacce di un CS}
 		\end{figure}
 	\end{frame}
@@ -424,13 +424,13 @@
 		
 		class Parrot(Bird):
 			def quack(self):
-				return "The parrot parrots a quack"
+				return "The parrot imitates a quack"
 			def fly(self):
 				return "The parrot is flying"
 		
 		class Man():
 			def quack(self):
-				return "The man parrots a quack too"
+				return "The man imitates a quack too"
 
 		\end{lstlisting}
 	\end{frame}
@@ -493,8 +493,29 @@
 		\end{itemize}	
 	\end{frame}
 	
-	\begin{frame}
+	\begin{frame}[fragile]
 		\frametitle{Duck typing vs Static typing (2)}
+		\begin{lstlisting}
+			class ElectricEngine:
+				def turn_on(self):
+					return "zzzz"
+			
+			class EngineV8:
+				def turn_on(self):
+					return "brooom"
+			
+			electric = ElectricEngine()
+			fueled = EngineV8()
+			
+			car1 = Car(fueled)
+			car2 = Car(electric)
+			print(car1.run())
+			print(car2.run())
+		\end{lstlisting}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Duck typing vs Static typing (3)}
 		In statically-typed language, like Java, if we want to pass different objects to the Car contructor, they has to be \textbf{different implementation of a common interface}:
 		\begin{itemize}
 			\item we had to declare explicit an interface (\textit{IEngine for example});
@@ -573,7 +594,7 @@
 		
 		class Parrot(Bird):
 			def quack(self):
-				return "The parrot parrots a quack"
+				return "The parrot imitates a quack"
 			def fly(self):
 				return "The parrot is flying"
 				
@@ -581,7 +602,7 @@
 			def __init__(self, name):
 				self.name = name
 			def quack(self):
-				return "The man parrots a quack too"
+				return "The man imitates a quack too"
 		\end{lstlisting}
 		
 	\end{frame}
@@ -681,9 +702,18 @@
 		\item a statement calling a method on an object does not rely on the declared type of the object (at compile time)
 		\item The object simply must supply an implementation of the method called, when called, at run-time. 
 		\item It gives flexibility to the language.
-		\item 
+		\item Doesn't guarantee the absence of type error during run-time.
 	\end{itemize}
 \end{frame}
+
+\begin{frame}[fragile]
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=1.5]{img/doctor.jpg}
+		\label{Interfacce di un CS}
+	\end{figure}
+\end{frame}
+
 
 
 
