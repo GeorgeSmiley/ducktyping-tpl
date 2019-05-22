@@ -86,7 +86,7 @@
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Python's evaluation strategy}
+		\frametitle{Python evaluation strategy}
 			Could be useful to first recall the difference between \textit{\textbf{strict}} and \textit{\textbf{lazy}} evaluation:
 			\begin{enumerate}
 				\item \textbf{Strict evaluation strategy}: the arguments of a function are fully evaluated to values before evaluating the function call (call by value);
@@ -189,7 +189,7 @@
 	\end{frame}
 
 	\begin{frame}[fragile]
-		\frametitle{Python's dynamic typing example (1)}
+		\frametitle{Python dynamic typing example (1)}
 			\begin{lstlisting} 
 			if False:
 				print(10+"ten") 
@@ -208,7 +208,7 @@
 	\end{frame}
 
 	\begin{frame}[fragile]
-		\frametitle{Python's dynamic typing example (2)}
+		\frametitle{Python dynamic typing example (2)}
 		Another consequnce is that programmers are \textbf{free to bind the same names (variables) to different objects, having  different types}. Then the following statements are perfectly legal:
 		
 		\begin{lstlisting}
@@ -220,7 +220,7 @@
 	\end{frame}
 
 	\begin{frame}[fragile]
-		\frametitle{Python's strong typing example}
+		\frametitle{Python strong typing example}
 		Python is not allowed to perform operations inappropriate to the type of the object: 
 		\begin{lstlisting}
 		print(10 + "ten")
@@ -407,6 +407,7 @@
 		\begin{itemize}
 			\item Implementing duck typing the type of an object is not checked at runtime. Instead the type checker looks for the presence of a given method or attribute.
 			\item \textbf{The idea is that it doesn't actually matter what type my data is - just if i can do with it what i want.}
+			\item Duck typing implements polymorphism in Python.
 		\end{itemize}
 	\end{frame}
 
@@ -443,32 +444,12 @@
 		v = [Duck(), Parrot(), Man()]
 		
 		for i in v:
-			print(i.quack())
-		\end{lstlisting}
-		Even if the istance of Man is not a subtype of the Bird class the type-checker do not raise any type error. The output would be:
-		
-		\begin{lstlisting}[keywordstyle=\color{black},
-		commentstyle=\color{black},
-		stringstyle=\color{black}.]	
-		Quaaack
-		The parrot parrots a quack
-		The man parrots a quack too
-		\end{lstlisting}
-		
-		
-		
-	\end{frame}
-
-	\begin{frame}[fragile]
-		\frametitle{Duck typing: example (3)}
-		\begin{lstlisting}	
-		for i in v:
 			print(i.fly())
 		\end{lstlisting}
 		If we try to use the \textit{fly()} method  over the entire collection of objects an error is raised at runtime:
-			\begin{lstlisting}[keywordstyle=\color{black},
+		\begin{lstlisting}[keywordstyle=\color{black},
 		commentstyle=\color{black},
-	stringstyle=\color{black}.]	
+		stringstyle=\color{black}.]	
 	The duck is flying
 	The parrot is flying
 	Traceback (most recent call last):
@@ -477,6 +458,28 @@
 	AttributeError: Man instance has no attribute 'fly'
 		\end{lstlisting}
 	\end{frame}
+
+	\begin{frame}[fragile]
+		\frametitle{Duck typing: example (3)}
+		\begin{lstlisting}			
+		for i in v:
+			print(i.quack())
+		\end{lstlisting}
+		Even if the istance of Man is not a subtype of the Bird class the type-checker do not raise any type error. The output would be:
+		
+		\begin{lstlisting}[keywordstyle=\color{black},
+		commentstyle=\color{black},
+		stringstyle=\color{black}.]	
+		Quaaack
+		The parrot imitates a quack
+		The man imitates a quack too
+		\end{lstlisting}
+		
+		
+		
+	\end{frame}
+
+	
 
 	\begin{frame}[fragile]
 		\frametitle{Duck typing vs Static typing (1)}
@@ -521,7 +524,7 @@
 	
 	\begin{frame}
 		\frametitle{Duck typing vs Static typing (3)}
-		In statically-typed language, like Java, if we want to pass different objects to the Car contructor, they has to be \textbf{different implementation of a common interface}:
+		In statically-typed language, like Java, if we want to pass different objects to the Car contructor, they has to be for example \textbf{different implementation of a common interface}:
 		\begin{itemize}
 			\item we had to declare explicit an interface (\textit{IEngine for example});
 			\item declare its implementation (EngineV8 or ElectricEngine);
